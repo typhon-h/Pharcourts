@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Head content -->
   <?php include "./inc/head.php"; ?>
 
-  <body>
+  <body id="body">
 
-  <?php include "./inc/nav.php"; ?>
+    <!-- Navigation -->
+    <?php include "./inc/nav.php"; ?>
 
-  <?php include "./inc/search.php"; ?>
+    <!-- Search Section -->
+    <?php include "./inc/search.php"; ?>
 
-   <div class="content">
-    <?php include "./inc/featured-properties.php"; ?>
+    <div class="content">
+      <!-- Featured Properties -->
+      <?php include "./inc/featured-properties.php"; ?>
+       <hr />
+      <!-- Information Cards -->
+      <?php include "./inc/info-cards.php"; ?>
+    </div>
 
-     <hr>
-
-    <?php include "./inc/info-cards.php"; ?>
-   </div>
-
- <?php include "./inc/footer.php"; ?>
-
+    <!-- Footer -->
+     <?php include "./inc/footer.php"; ?>
   </body>
 </html>

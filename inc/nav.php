@@ -1,14 +1,18 @@
 <div class="nav">
-   <img class = "logo" src="" alt="Logo">
+   <img class = "logo" src="./media/logo.png" alt="Logo">
    <div class="nav-items">
-     <a href="">Home</a>
-     <a href="">Listings</a>
-     <a href="">Agents</a>
-     <a href="">About Us</a>
-     <a href="">Contact Us</a>
+     <div class="nav-buttons">
+       <a href="#">Home</a>
+       <a href="#">Listings</a>
+       <a href="#">Agents</a>
+       <a href="#">About Us</a>
+       <a href="#">Contact Us</a>
+     </div>
+
+     <div class="nav-login">
+       <a href="">Login/Logout</a> <!-- PHP control using current session -->
+     </div>
    </div>
 
-   <div class="login">
-     <a href="">Login/Logout</a>
-   </div>
+
  </div>
