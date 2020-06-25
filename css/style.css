@@ -1,0 +1,232 @@
+.nav,.search,.content,.footer{ /* Developer borders for outline */
+  border: 1px solid black;
+}
+
+.solid{
+  width: 100%;
+  border: 1px solid #000;
+}
+
+
+                                      /* ########### */
+                                      /* Layout */
+                                      /* ########### */
+
+.nav{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: fixed;
+  width: 96.5%;
+  padding: 1rem;
+}
+
+.logo{
+  width: 15%;
+}
+
+.nav-items{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+
+  width: 90%;
+  margin-left:5rem;
+  margin-right:5rem;
+}
+
+.nav-buttons{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.search, .content, .featured, .info-cards, .card, .footer{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 2rem;
+}
+.search{
+  padding-top: 10rem;
+}
+
+.featured{
+  padding-top: 0rem;
+  width: 100%;
+}
+
+.slideshow{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 80%;
+  height: 450px; /*Default for development */
+}
+
+.house-info{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  width: 30%;
+
+  border: 1px solid red;
+}
+
+.house-img{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 70%;
+
+  border: 1px solid black;
+}
+
+.info-cards{
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card{
+  width: 28%;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.card h3{
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.footer-content{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.column{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  width: 30%;
+  border: 1px solid black;
+}
+
+
+                                        /* ########### */
+                                        /* Color */
+                                        /* ########### */
+:root{
+  /* --color: #000;
+  background-color: var(--color); */
+}
+
+
+                                        /* ########### */
+                                        /* Typography */
+                                        /* ########### */
+:root{
+font-size: 16px;
+font-family: Verdana, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+                                        /* ########### */
+                                        /* Forms */
+                                        /* ########### */
+.search-form{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 60%;
+}
+
+.search-items{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding:auto;
+}
+.search-form input[type=text]{
+  width: 80%;
+  height: 3rem;
+}
+
+.search-form input[type=submit]{
+  width: 19%;
+}
+
+.additional-options{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 0 1rem;
+}
+
+.additional-option{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+
+                                        /* ########### */
+                                        /* Animations */
+                                        /* ########### */

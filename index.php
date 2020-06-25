@@ -14,7 +14,7 @@
     <div class="content">
       <!-- Featured Properties -->
       <?php include "./inc/featured-properties.php"; ?>
-       <hr />
+       <hr class="solid">
       <!-- Information Cards -->
       <?php include "./inc/info-cards.php"; ?>
     </div>
