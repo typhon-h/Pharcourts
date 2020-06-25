@@ -2,15 +2,13 @@
   <h1>Home is where the heart is</h1> <!-- Slogan -->
   <form class="search-form" method="post"> <!-- Search Form -->
     <div class="search-items">
-      <input name = "search-bar" type="text" placeholder="Search..."> <!-- Always visible -->
+      <input name = "search-bar" type="text" placeholder="Search..." autocomplete="off"> <!-- Always visible -->
       <input name = "search-button" type="submit" value="Search">
     </div>
     <!-- Toggle for additional dropdown options -->
-    <div class="options-toggle">
-      <label for="options-toggle">More Options &#9650; &#9660;</label> <!-- Show arrow based on checkbox state -->
-      <input type="checkbox" id="options-toggle" name="options-toggle" value="">
-    </div>
+    <label class="option-toggle"for="option-toggle">More Options &#9650; &#9660;</label> <!-- Show arrow based on checkbox state -->
 
+    <input type="checkbox" id="option-toggle" name="option-toggle" value="" hidden>
     <div class="additional-options"> <!-- Additional dropdown options -->
       <div class="additional-option">
         <label for="">Bedrooms</label>

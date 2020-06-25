@@ -1,12 +1,10 @@
-.nav,.search,.content,.footer{ /* Developer borders for outline */
-  border: 1px solid black;
-}
-
-.solid{
+.solid{ /*Fixes hr tags used in flex boxes */
   width: 100%;
   border: 1px solid #000;
 }
-
+body{
+  margin:0;
+}
 
                                       /* ########### */
                                       /* Layout */
@@ -20,7 +18,7 @@
   -ms-flex-direction: row;
   flex-direction: row;
   position: fixed;
-  width: 96.5%;
+  width: 100%;
   padding: 1rem;
 }
 
@@ -52,6 +50,10 @@
   width: 60%;
 }
 
+.nav a{
+  padding: 1.2rem 0 1.2rem 0;
+}
+
 .search, .content, .featured, .info-cards, .card, .footer{
   display: -webkit-flex;
   display: -ms-flex;
@@ -65,7 +67,18 @@
   padding: 2rem;
 }
 .search{
-  padding-top: 10rem;
+  padding-top: 12rem;
+  padding-bottom: 3rem;
+  background-image: url('../media/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.option-toggle{
+  padding-top: 0.3rem;
+  padding-left: 1.5rem;
 }
 
 .featured{
@@ -91,7 +104,6 @@
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: relative;
   width: 30%;
 
   border: 1px solid red;
@@ -151,16 +163,54 @@
   width: 30%;
   border: 1px solid black;
 }
-
-
                                         /* ########### */
                                         /* Color */
                                         /* ########### */
 :root{
-  /* --color: #000;
-  background-color: var(--color); */
+  background-color: #B7B29D;
+}
+.nav{
+  background-image: -webkit-linear-gradient(top left, #3C505F, #B7B29D);
+  background-image: -o-linear-gradient(top left, #3C505F, #B7B29D);
+  background-image: linear-gradient(to bottom right, #3C505F, #B7B29D);
 }
 
+.nav a{
+  color: #1A1B1A;
+  border-bottom: 0.1em solid transparent;
+}
+
+.nav a:hover, .nav a:active{
+  color: #3C505F;
+  border-bottom: 0.1em solid #1A1B1A;
+}
+
+.search h1, .search label{
+  color: #FFF;
+}
+
+.option-toggle{
+  text-shadow: 0.05em 0.05em 8px #1A1B1A;
+}
+
+.option-toggle:hover, .option-toggle:active{ /*Make look like link*/
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.additional-selects, .additional-selects select{
+  color: #fff;
+  text-shadow: 0.05em 0.05em 8px #1A1B1A;
+}
+
+.content{
+  background-color: #B7B29D;
+}
+
+
+.footer{
+  background-color: #A26444;
+}
 
                                         /* ########### */
                                         /* Typography */
@@ -174,6 +224,33 @@ a{
   text-decoration: none;
 }
 
+.nav{
+  font-size:1.2rem;
+}
+.search h1{
+  font-style: oblique;
+  font-size: 3.5em;
+  font-weight: 500;
+  text-shadow: 0.05em 0.05em 8px #1A1B1A;
+}
+
+.search-items input{
+  font-size: 1.5em;
+}
+
+.search-items input[type=submit]{
+  font-weight: 550;
+}
+
+.additional-options{
+  font-size: 1.5em;
+  font-weight: 550;
+  text-shadow: 0.1em 0.1em #1A1B1A;
+}
+
+.additional-selects{
+  font-size: 0.8em;
+}
                                         /* ########### */
                                         /* Forms */
                                         /* ########### */
@@ -198,10 +275,16 @@ a{
 .search-form input[type=text]{
   width: 80%;
   height: 3rem;
+  padding-left: 1rem;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
 }
 
 .search-form input[type=submit]{
   width: 19%;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  background-color: #869D8A;
 }
 
 .additional-options{
@@ -213,6 +296,7 @@ a{
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 1rem 0 1rem;
+  visibility: hidden;
 }
 
 .additional-option{
@@ -224,9 +308,37 @@ a{
   flex-direction: column;
   -ms-align-items: center;
   align-items: center;
+  width: 30%;
+}
+
+.additional-option label{
+  padding-bottom: 0.5rem;
+}
+
+.additional-selects{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.additional-selects select{
+  width: 25%;
+  height: 2rem;
+  margin-right:1em;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.2em solid #FFF;
 }
 
 
                                         /* ########### */
                                         /* Animations */
                                         /* ########### */
+#option-toggle:checked + .additional-options{
+  visibility: visible;
+}
