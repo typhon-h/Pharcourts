@@ -5,6 +5,10 @@
 body{
   margin:0;
 }
+a{ /*Default link style*/
+  text-decoration: none;
+  color: #1A1B1A;
+}
 
                                       /* ########### */
                                       /* Layout */
@@ -20,6 +24,7 @@ body{
   position: fixed;
   width: 100%;
   padding: 1rem;
+  z-index: 99; /*On top of everything*/
 }
 
 .logo{
@@ -126,17 +131,65 @@ body{
   -ms-flex-direction: row;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
 .card{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content:flex-start;
   width: 28%;
-  padding: 1rem;
-  border: 1px solid black;
+  height: 25rem;
+  padding: 0;
+  overflow: hidden;
 }
 
-.card h3{
+.card-head{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#our-mission{ /*Card heading bg image */
+  background-image: url("../media/our-mission.png");
+  background-position: top;
+}
+
+#most-trusted{ /*Card heading bg image */
+  background-image: url("../media/most-trusted.png");
+  background-position: center;
+}
+
+#enquire-today{ /*Card heading bg image */
+  background-image: url("../media/enquire-today.png");
+  background-position: center;
+}
+
+.card-head h3{
   padding-bottom: 1rem;
-  border-bottom: 1px solid black;
+}
+
+.card p, .card a{
+/*display:none causing layout problems, visibility and all 0 is used instead*/
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  overflow:hidden;
+  text-align:center;
 }
 
 .footer-content{
@@ -176,7 +229,6 @@ body{
 }
 
 .nav a{
-  color: #1A1B1A;
   border-bottom: 0.1em solid transparent;
 }
 
@@ -200,14 +252,27 @@ body{
 
 .additional-selects, .additional-selects select{
   color: #fff;
-  text-shadow: 0.05em 0.05em 8px #1A1B1A;
+  text-shadow: 0.1em 0.1em 8px #1A1B1A;
 }
 
 .content{
   background-color: #B7B29D;
 }
 
+.card{
+  background-color: #1A1B1A;
+  color: #fff;
+  box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
+}
 
+.card a{ /*Link styling card*/
+  color: #fff;
+  font-weight: 550; /*bold*/
+}
+
+.card a:hover, .card a:active{
+  color: #3C505F;
+}
 .footer{
   background-color: #A26444;
 }
@@ -220,18 +285,15 @@ font-size: 16px;
 font-family: Verdana, sans-serif;
 }
 
-a{
-  text-decoration: none;
-}
-
 .nav{
   font-size:1.2rem;
 }
+
 .search h1{
   font-style: oblique;
   font-size: 3.5em;
   font-weight: 500;
-  text-shadow: 0.05em 0.05em 8px #1A1B1A;
+  text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
 .search-items input{
@@ -245,100 +307,135 @@ a{
 .additional-options{
   font-size: 1.5em;
   font-weight: 550;
-  text-shadow: 0.1em 0.1em #1A1B1A;
+  text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
 .additional-selects{
   font-size: 0.8em;
-}
-                                        /* ########### */
-                                        /* Forms */
-                                        /* ########### */
-.search-form{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 60%;
+  text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
-.search-items{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding:auto;
+.card-head{
+  font-size: 3em;
+  text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
-.search-form input[type=text]{
-  width: 80%;
-  height: 3rem;
-  padding-left: 1rem;
-  border-top-left-radius: 2em;
-  border-bottom-left-radius: 2em;
-}
-
-.search-form input[type=submit]{
-  width: 19%;
-  border-top-right-radius: 2em;
-  border-bottom-right-radius: 2em;
-  background-color: #869D8A;
-}
-
-.additional-options{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.5rem 1rem 0 1rem;
-  visibility: hidden;
-}
-
-.additional-option{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-align-items: center;
-  align-items: center;
-  width: 30%;
-}
-
-.additional-option label{
-  padding-bottom: 0.5rem;
-}
-
-.additional-selects{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.additional-selects select{
-  width: 25%;
-  height: 2rem;
-  margin-right:1em;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.2em solid #FFF;
-}
-
 
                                         /* ########### */
                                         /* Animations */
                                         /* ########### */
 #option-toggle:checked + .additional-options{
   visibility: visible;
+}
+
+/*Transition styling and timings for index cards*/
+.card{
+  transition: transform 1s;
+}
+
+.card-head,.card p,.card a{ /*Elements transitioning and timings */
+  transition: height 0.8s,
+              margin 1s,
+              visibility 1s;
+}
+
+.card:hover{
+  transform: scale(1.1,1.1); /*Zoom slightly on hover*/
+}
+.card:hover > p{ /*Card info text*/
+  visibility: visible;
+  margin: 1.5rem 3rem;
+  height: 10.5em;
+}
+.card:hover>a{
+  visibility: visible;
+  height: 1.5em;
+  margin-bottom: 1rem;
+}
+.card:hover > .card-head{
+  height: 10rem;
+  font-size: 2rem;
+}
+
+                                      /* ########### */
+                                      /* Forms */
+                                      /* ########### */
+.search-form{
+display: -webkit-flex;
+display: -ms-flex;
+display: flex;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+width: 60%;
+}
+
+.search-items{
+display: -webkit-flex;
+display: -ms-flex;
+display: flex;
+justify-content: center;
+width: 100%;
+padding:auto;
+}
+.search-form input[type=text]{
+width: 80%;
+height: 3rem;
+padding-left: 1rem;
+border-top-left-radius: 2em;
+border-bottom-left-radius: 2em;
+}
+
+.search-form input[type=submit]{
+width: 19%;
+border-top-right-radius: 2em;
+border-bottom-right-radius: 2em;
+background-color: #869D8A;
+}
+
+.additional-options{
+display: -webkit-flex;
+display: -ms-flex;
+display: flex;
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+justify-content: space-between;
+padding: 0.5rem 1rem 0 1rem;
+visibility: hidden;
+}
+
+.additional-option{
+display: -webkit-flex;
+display: -ms-flex;
+display: flex;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+-ms-align-items: center;
+align-items: center;
+width: 30%;
+}
+
+.additional-option label{
+padding-bottom: 0.5rem;
+}
+
+.additional-selects{
+display: -webkit-flex;
+display: -ms-flex;
+display: flex;
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+width: 100%;
+justify-content: space-between;
+}
+
+.additional-selects select{
+width: 25%;
+height: 2rem;
+margin-right:1em;
+background-color: transparent;
+border: none;
+border-bottom: 0.2em solid #FFF;
 }
