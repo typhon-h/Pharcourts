@@ -1,4 +1,4 @@
-/*Misc Styling*/
+  /*Misc Styling*/
 .solid{ /*Fixes hr tags used in flex boxes */
   width: 100%;
   border: 1px solid #000;
@@ -103,7 +103,7 @@ a{ /*Default link style*/
   -ms-flex-direction: row;
   flex-direction: row;
   width: 80%;
-  height: 450px; /*Default for development */
+  height: 28em; /*Default for development */
 }
 
 .house-info{
@@ -196,6 +196,17 @@ a{ /*Default link style*/
   text-align:center;
 }
 
+.footer{
+  height: 20rem;
+}
+.footer a{
+  width:4%;
+  top:0;
+}
+.footer img{
+  width: 100%;
+}
+
 .footer-content{
   display: -webkit-flex;
   display: -ms-flex;
@@ -205,6 +216,7 @@ a{ /*Default link style*/
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  height: 90%;
   margin-top: 1rem;
 }
 
@@ -218,7 +230,69 @@ a{ /*Default link style*/
   -ms-align-items: center;
   align-items: center;
   width: 30%;
-  border: 1px solid black;
+  height: 100%;
+}
+
+.newsletter h4{
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.media-links{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 2em;
+}
+
+.media-links a{
+  width: 15%;
+  border-radius: 32px;
+  overflow: hidden;
+}
+.media-links img{
+  width: 100%;
+}
+
+.testimonials{
+  --count: 3;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2em;
+}
+
+.slider-testimonial{
+  position: absolute;
+  left:-200%;
+  height: 100%;
+  width: calc(100%*var(--count));
+}
+
+.testimonial{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-around;
+  float: left;
+  width: calc(100%/var(--count));
+  height: 100%;
+}
+
+.testimonial p, .testimonial i{
+  padding: 0em 1em 1em 1em;
+}
+
+
+.legal-information{
+  font-size: 1.3em;
 }
                                         /* ########### */
                                         /* Color */
@@ -282,6 +356,15 @@ a{ /*Default link style*/
   background-color: #A26444;
 }
 
+.testimonials{
+  background-color: #B7B29D; /*temporary to see space*/
+  box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
+}
+
+.legal-information a:hover, .legal-information a:hover{
+  color: #000;
+}
+
                                         /* ########### */
                                         /* Typography */
                                         /* ########### */
@@ -309,6 +392,11 @@ font-family: Verdana, sans-serif;
   font-weight: 550;
 }
 
+.subscribe-form input{
+  font-size: 0.6em;
+}
+
+
 .additional-options{
   font-size: 1.5em;
   font-weight: 550;
@@ -325,9 +413,30 @@ font-family: Verdana, sans-serif;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
+.newsletter{
+  font-size: 1.5em;
+}
+
+.newsletter h4{
+  text-decoration: underline;
+}
+
+.legal-information a:hover, .legal-information a:active{
+  text-decoration: underline;
+}
+
+.testimonial p{
+  font-family: fantasy;
+  font-size:1.5em;
+}
+
+.testimonial i{
+  font-size: 1em;
+}
                                         /* ########### */
                                         /* Animations */
                                         /* ########### */
+
 #option-toggle:checked + .additional-options{ /*Display options when checked*/
   visibility: visible;
 }
@@ -364,6 +473,30 @@ font-family: Verdana, sans-serif;
   font-size: 2rem;
 }
 
+@keyframes scroll-testimonial{
+  0%{
+    left:0;
+  }
+
+  34%{
+    left:-100%;
+  }
+
+  78%{
+    left:-200%;
+  }
+
+  100%{
+    left:0;
+  }
+
+}
+
+.slider-testimonial{
+  animation: scroll-testimonial 15s infinite;
+
+}
+
                                       /* ########### */
                                       /* Forms */
                                       /* ########### */
@@ -377,7 +510,7 @@ font-family: Verdana, sans-serif;
   width: 60%;
 }
 
-.search-items{
+.search-items,.subscribe-form{
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -385,16 +518,16 @@ font-family: Verdana, sans-serif;
   width: 100%;
   padding:auto;
 }
-.search-form input[type=text]{
-  width: 80%;
+.search-form input[type=text], .newsletter input[type=text]{
+  width: 74%;
   height: 3rem;
   padding-left: 1rem;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
 }
 
-.search-form input[type=submit]{
-  width: 19%;
+.search-form input[type=submit],.newsletter input[type=submit]{
+  width: 25%;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
   background-color: #869D8A;
