@@ -14,10 +14,10 @@
 
     <!-- Social Media Links -->
     <div class="media-links">
-      <a href="https://www.facebook.com/PharcourtsTimaru/" target="_blank"><img src="./media/facebook-icon.png" alt="Facebook"></a>
-      <a href="https://twitter.com/pharcourtsnz?lang=en" target="_blank"><img src="./media/twitter-icon.png" alt="Twitter"></a>
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="./media/youtube-icon.png" alt="YouTube"></a>
-      <a href="https://www.instagram.com/Pharcourts/" target="_blank"><img src="./media/instagram-icon.png" alt="Instagram"></a>
+      <a href="https://www.facebook.com/PharcourtsTimaru/" target="_blank"><img src="./media/social/facebook-icon.png" alt="Facebook"></a>
+      <a href="https://twitter.com/pharcourtsnz?lang=en" target="_blank"><img src="./media/social/twitter-icon.png" alt="Twitter"></a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="./media/social/youtube-icon.png" alt="YouTube"></a>
+      <a href="https://www.instagram.com/Pharcourts/" target="_blank"><img src="./media/social/instagram-icon.png" alt="Instagram"></a>
     </div>
 
     </div>
