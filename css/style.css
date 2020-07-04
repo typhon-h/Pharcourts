@@ -95,14 +95,15 @@ a{ /*Default link style*/
   width: 100%;
 }
 
-.slideshow{
+.featured-slideshow{
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 80%;
+  position: relative;
+  width: 70%;
   height: 28em; /*Default for development */
 }
 
@@ -113,8 +114,10 @@ a{ /*Default link style*/
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  position: absolute;
+  height: 100%;
   width: 30%;
-
+  z-index: 80;
   border: 1px solid red;
 }
 
@@ -125,9 +128,13 @@ a{ /*Default link style*/
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 70%;
-
+  width: 100%;
   border: 1px solid black;
+  justify-content: flex-end;
+}
+
+.house-img img{
+  width: 100%;
 }
 
 .info-cards{
