@@ -1,14 +1,23 @@
-  /*Misc Styling*/
+
+/*
+.___  ___.  __       _______.  ______
+|   \/   | |  |     /       | /      |
+|  \  /  | |  |    |   (----`|  ,----'
+|  |\/|  | |  |     \   \    |  |
+|  |  |  | |  | .----)   |   |  `----.
+|__|  |__| |__| |_______/     \______| */
+
+
 .solid{ /*Fixes hr tags used in flex boxes */
   width: 100%;
-  border: 1px solid #000;
+  border: 1px solid #1A1B1A;
 }
 
 body{
   margin:0;
 }
 
-a{ /*Default link style*/
+a{ /*Default hyperlink style*/
   text-decoration: none;
   color: #1A1B1A;
 }
@@ -17,17 +26,39 @@ ul{
   list-style: none;
 }
 
-                                      /* ########### */
-                                      /* Layout */
-                                      /* ########### */
-
-.nav{
+.row{
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+}
+
+.column{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+
+
+ /*
+ __          ___   ____    ____  ______    __    __  .___________.
+|  |        /   \  \   \  /   / /  __  \  |  |  |  | |           |
+|  |       /  ^  \  \   \/   / |  |  |  | |  |  |  | `---|  |----`
+|  |      /  /_\  \  \_    _/  |  |  |  | |  |  |  |     |  |
+|  `----./  _____  \   |  |    |  `--'  | |  `--'  |     |  |
+|_______/__/     \__\  |__|     \______/   \______/      |__| */
+
+
+
+/* _________________________________________________________________________ */
+/* Nav */
+.nav{
   position: fixed;
   width: 100%;
   padding: 1rem;
@@ -39,12 +70,6 @@ ul{
 }
 
 .nav-items{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   justify-content: space-between;
   -ms-align-items: center;
   align-items: center;
@@ -53,9 +78,6 @@ ul{
 }
 
 .nav-buttons{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
   justify-content: space-between;
   width: 60%;
 }
@@ -63,23 +85,13 @@ ul{
 .nav a{
   padding: 1.2rem 0 1.2rem 0;
 }
-
-.search, .content,
-.featured, .info-cards,
-.card, .footer{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+/* _________________________________________________________________________ */
+/* Search */
+.search{
   justify-content: center;
   -ms-align-items: center;
   align-items: center;
   padding: 2rem;
-}
-
-.search{
   padding-top: 12rem;
   padding-bottom: 3rem;
   background-image: url('../media/background.png');
@@ -93,36 +105,38 @@ ul{
   padding-top: 0.3rem;
   padding-left: 1.5rem;
 }
+/* _________________________________________________________________________ */
 
+.content{
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 2rem;
+  border-top: 0.1em solid black;
+}
+
+/* _________________________________________________________________________ */
+/* Featured Properties (Index) */
 .featured{
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 2rem 0;
   padding-top: 0rem;
   width: 100%;
 }
 
-.content{
-  border-top: 0.1em solid black;
-}
-
 .featured-slideshow{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   position: relative;
   width: 70%;
-  height: 28em; /*Default for development */
+  height: 28rem;
   border: 0.2em solid #1A1B1A;
 }
 
+/* Additional styling for slideshow is
+   with Testimonials section in Footer */
+
 .house-info{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -ms-align-items: center;
   align-items: center;
   position: absolute;
@@ -131,9 +145,7 @@ ul{
 }
 
 .house-info h2{
-  margin-top: 2em;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin: 2em 1em;
   margin-bottom:0;
   text-align: center;
 }
@@ -163,12 +175,6 @@ ul{
 }
 
 .house-img{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   width: 100%;
   height: 100%;
   justify-content: flex-end;
@@ -178,22 +184,21 @@ ul{
   width: 100%;
 }
 
+/* _________________________________________________________________________ */
+/* Info Cards (Index) */
+
 .info-cards{
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-align-items: center;
+  align-items: center;
   justify-content: space-between;
+  padding: 2rem 0;
   width: 100%;
 }
 
 .card{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   justify-content:flex-start;
+  -ms-align-items: center;
+  align-items: center;
   width: 28%;
   height: 25rem;
   padding: 0;
@@ -201,12 +206,6 @@ ul{
 }
 
 .card-head{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   justify-content: flex-end;
   width: 100%;
   height: 100%;
@@ -236,7 +235,8 @@ ul{
 }
 
 .card p, .card a{
-/*display:none causing layout problems, visibility and all 0 is used instead*/
+/*display:none causing layout problems
+  visibility and all 0 is used instead*/
   visibility: hidden;
   height: 0;
   margin: 0;
@@ -244,37 +244,33 @@ ul{
   text-align:center;
 }
 
+/* _________________________________________________________________________ */
+/* Footer */
 .footer{
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 2rem;
   height: 20rem;
 }
+
 .footer a{
   width:4%;
   top:0;
 }
+
 .footer img{
   width: 100%;
 }
 
 .footer-content{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
   height: 90%;
   margin-top: 1rem;
 }
 
-.column{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.footer-section{
   -ms-align-items: center;
   align-items: center;
   width: 30%;
@@ -287,12 +283,6 @@ ul{
 }
 
 .media-links{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   justify-content: space-around;
   width: 100%;
   margin-top: 2em;
@@ -300,15 +290,16 @@ ul{
 
 .media-links a{
   width: 15%;
-  border-radius: 32px;
+  border-radius: 2rem;
   overflow: hidden;
 }
+
 .media-links img{
   width: 100%;
 }
 
-.featured-slideshow,.testimonials{
-  --count: 3;
+.testimonials,.featured-slideshow{
+  --count: 3; /*CSS Variable - Amount of boxes in slideshow */
   position: relative;
   overflow: hidden;
   border-radius: 2em;
@@ -317,19 +308,14 @@ ul{
 .slider-testimonial,.slider-featured{
   position: absolute;
   height: 100%;
-  width: calc(100%*var(--count));
+  /*Slide is 100% wide. Fit all w no overflow. 3 default value*/
+  width: calc(100%*var(--count,3));
 }
 
-.featured-property,.testimonial{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.testimonial, .featured-property{
   justify-content: space-around;
   float: left;
-  width: calc(100%/var(--count));
+  width: calc(100%/var(--count,3)); /*Visible area - only 1 box*/
   height: 100%;
 }
 
@@ -337,16 +323,29 @@ ul{
   padding: 0em 1em 1em 1em;
 }
 
-
 .legal-information{
   font-size: 1.3em;
 }
-                                        /* ########### */
-                                        /* Color */
-                                        /* ########### */
+/* _________________________________________________________________________ */
+
+
+
+  /*
+  ______   ______    __        ______   .______
+ /      | /  __  \  |  |      /  __  \  |   _  \
+|  ,----'|  |  |  | |  |     |  |  |  | |  |_)  |
+|  |     |  |  |  | |  |     |  |  |  | |      /
+|  `----.|  `--'  | |  `----.|  `--'  | |  |\  \----.
+ \______| \______/  |_______| \______/  | _| `._____| */
+
+
+
+
 :root{
   background-color: #B7B29D;
 }
+/* _________________________________________________________________________ */
+/* Nav */
 .nav{
   background-image: -webkit-linear-gradient(top left, #3C505F, #B7B29D);
   background-image: -o-linear-gradient(top left, #3C505F, #B7B29D);
@@ -361,7 +360,8 @@ ul{
   color: #3C505F;
   border-bottom: 0.1em solid #1A1B1A;
 }
-
+/* _________________________________________________________________________ */
+/* Search */
 .search h1, .search label{
   color: #FFF;
 }
@@ -370,20 +370,18 @@ ul{
   text-shadow: 0.05em 0.05em 8px #1A1B1A;
 }
 
-.option-toggle:hover, .option-toggle:active{ /*Make look like link*/
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .additional-selects, .additional-selects select{
   color: #fff;
   text-shadow: 0.1em 0.1em 8px #1A1B1A;
 }
+/* _________________________________________________________________________ */
 
 .content{
   background-color: #B7B29D;
 }
 
+/* _________________________________________________________________________ */
+/* Featured Properties (Index) */
 .featured-slideshow{
   box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
 }
@@ -396,6 +394,9 @@ ul{
 .house-info a{
   color: #fff;
 }
+
+/* _________________________________________________________________________ */
+/* Info Cards (Index) */
 
 .card{
   background-color: #1A1B1A;
@@ -412,6 +413,9 @@ ul{
   color: #3C505F;
 }
 
+/* _________________________________________________________________________ */
+/* Footer */
+
 .footer{
   background-color: #A26444;
 }
@@ -425,18 +429,33 @@ ul{
   color: #000;
 }
 
-                                        /* ########### */
-                                        /* Typography */
-                                        /* ########### */
+/* _________________________________________________________________________ */
+/*
+
+
+.___________.____    ____ .______     ______
+|           |\   \  /   / |   _  \   /  __  \
+`---|  |----` \   \/   /  |  |_)  | |  |  |  |
+    |  |       \_    _/   |   ___/  |  |  |  |
+    |  |         |  |     |  |      |  `--'  |
+    |__|         |__|     | _|       \______/   */
+
+
+
+
 :root{
 font-size: 16px;
 font-family: Verdana, sans-serif;
 }
 
+/* _________________________________________________________________________ */
+/* Nav */
 .nav{
   font-size:1.2rem;
 }
 
+/* _________________________________________________________________________ */
+/* Search */
 .search h1{
   font-style: oblique;
   font-size: 3.5em;
@@ -444,18 +463,10 @@ font-family: Verdana, sans-serif;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
-.search-items input{
-  font-size: 1.5em;
+.option-toggle:hover, .option-toggle:active{ /*Make look like link*/
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-.search-items input[type=submit]{
-  font-weight: 550;
-}
-
-.subscribe-form input{
-  font-size: 0.6em;
-}
-
 
 .additional-options{
   font-size: 1.5em;
@@ -468,6 +479,8 @@ font-family: Verdana, sans-serif;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
+/* _________________________________________________________________________ */
+/* Featured Properties (Index) */
 .house-info h3{
   font-size: 1.7em;
 }
@@ -487,20 +500,21 @@ font-family: Verdana, sans-serif;
 .house-info a:hover, .house-info a:active{
   text-decoration: underline;
 }
+
+/* _________________________________________________________________________ */
+/* Info Cards (Index) */
 .card-head{
   font-size: 3em;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
+/* _________________________________________________________________________ */
+/* Footer */
 .newsletter{
   font-size: 1.5em;
 }
 
 .newsletter h4{
-  text-decoration: underline;
-}
-
-.legal-information a:hover, .legal-information a:active{
   text-decoration: underline;
 }
 
@@ -512,47 +526,28 @@ font-family: Verdana, sans-serif;
 .testimonial i{
   font-size: 1em;
 }
-                                        /* ########### */
-                                        /* Animations */
-                                        /* ########### */
 
-#option-toggle:checked + .additional-options{ /*Display options when checked*/
-  visibility: visible;
+.legal-information a:hover, .legal-information a:active{
+  text-decoration: underline;
 }
 
-/*Transition styling and timings for index cards*/
-.card{ /*Transform transition speed*/
-  transition: transform 1s;
-}
+/* _________________________________________________________________________ */
 
-.card-head,.card p,.card a{ /*Elements transitioning and timings */
-  transition: height 0.8s,
-              margin 1s,
-              visibility 1s;
-}
 
-.card:hover{
-  transform: scale(1.1,1.1); /*Zoom slightly on hover*/
-}
 
-.card:hover > p{ /*Expand text*/
-  visibility: visible;
-  margin: 1.5rem 3rem;
-  height: 10.5em;
-}
+/*
+     ___      .__   __.  __  .___  ___.      ___   .___________. _______
+    /   \     |  \ |  | |  | |   \/   |     /   \  |           ||   ____|
+   /  ^  \    |   \|  | |  | |  \  /  |    /  ^  \ `---|  |----`|  |__
+  /  /_\  \   |  . `  | |  | |  |\/|  |   /  /_\  \    |  |     |   __|
+ /  _____  \  |  |\   | |  | |  |  |  |  /  _____  \   |  |     |  |____
+/__/     \__\ |__| \__| |__| |__|  |__| /__/     \__\  |__|     |_______| */
 
-.card:hover>a{ /*Expand Link*/
-  visibility: visible;
-  height: 1.5em;
-  margin-bottom: 1rem;
-}
 
-.card:hover > .card-head{ /*Collapse Head*/
-  height: 10rem;
-  font-size: 2rem;
-}
 
-@keyframes scroll{
+/* _________________________________________________________________________ */
+/* Keyframe Animation Sequences */
+@keyframes scroll{ /*Slideshow with 3 items */
   0%{
     left:0;
   }
@@ -571,36 +566,81 @@ font-family: Verdana, sans-serif;
 
 }
 
-/* Automatic animation as example. Manual control buttons will be added to final product using JS */
+/* _________________________________________________________________________ */
+/* Search */
+#option-toggle:checked + .additional-options{
+  /*Display options when checked*/
+  visibility: visible;
+}
+
+/* _________________________________________________________________________ */
+/* Info Cards (Index) */
+
+/*Transition styling and timings for index cards*/
+.card{ /*Transform transition speed*/
+  transition: transform 1s;
+}
+
+.card-head,.card p,.card a{ /*Elements transitioning and timings */
+  transition: height 0.8s,
+              margin 1s,
+              visibility 1s;
+}
+
+.card:hover{
+  transform: scale(1.1,1.1); /*Zoom slightly on hover*/
+}
+
+.card:hover > p{ /*Expand Description*/
+  visibility: visible;
+  margin: 1.5rem 3rem;
+  height: 10.5em;
+}
+
+.card:hover>a{ /*Expand Link*/
+  visibility: visible;
+  height: 1.5em;
+  margin-bottom: 1rem;
+}
+
+.card:hover > .card-head{ /*Collapse Head*/
+  height: 10rem;
+  font-size: 2rem;
+}
+
+/* _________________________________________________________________________ */
+/* Animation Definitions */
+
+/* Automatic animation as example.
+   Manual control buttons will be added to final product using JS */
 .slider-testimonial, .slider-featured{
   animation: scroll 20s infinite;
 
 }
 
+/* _________________________________________________________________________ */
 
 
-                                      /* ########### */
-                                      /* Forms */
-                                      /* ########### */
-.search-form{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 60%;
-}
 
-.search-items,.subscribe-form{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
+/*
+ _______   ______   .______      .___  ___.      _______.
+|   ____| /  __  \  |   _  \     |   \/   |     /       |
+|  |__   |  |  |  | |  |_)  |    |  \  /  |    |   (----`
+|   __|  |  |  |  | |      /     |  |\/|  |     \   \
+|  |     |  `--'  | |  |\  \----.|  |  |  | .----)   |
+|__|      \______/  | _| `._____||__|  |__| |_______/     */
+
+
+
+/* _________________________________________________________________________ */
+/* Multiple Forms*/
+.search-items, .subscribe-form{
   justify-content: center;
   width: 100%;
   padding:auto;
 }
-.search-form input[type=text], .newsletter input[type=text]{
+
+.search-items input[type=text], .subscribe-form input[type=text]{
   width: 74%;
   height: 3rem;
   padding-left: 1rem;
@@ -608,32 +648,34 @@ font-family: Verdana, sans-serif;
   border-bottom-left-radius: 2em;
 }
 
-.search-form input[type=submit],.newsletter input[type=submit]{
+.search-items input[type=submit], .subscribe-form input[type=submit]{
   width: 25%;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
   background-color: #869D8A;
 }
 
+/* _________________________________________________________________________ */
+/* Search Form */
+.search-form{
+  width: 60%;
+}
+
+.search-items input{
+  font-size: 1.5em;
+}
+
+.search-items input[type=submit]{
+  font-weight: 550;
+}
+
 .additional-options{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 1rem 0 1rem;
   visibility: hidden;
 }
 
 .additional-option{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -ms-align-items: center;
   align-items: center;
   width: 30%;
@@ -644,12 +686,6 @@ font-family: Verdana, sans-serif;
 }
 
 .additional-selects{
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   width: 100%;
   justify-content: space-between;
 }
@@ -662,3 +698,11 @@ font-family: Verdana, sans-serif;
   border: none;
   border-bottom: 0.2em solid #FFF;
 }
+
+/* _________________________________________________________________________ */
+/* Subscribe Form */
+.subscribe-form input{
+  font-size: 0.6em;
+}
+
+/* End of Document */

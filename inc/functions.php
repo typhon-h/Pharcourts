@@ -33,8 +33,8 @@ function display_featured_property($array,$index=0){
 
   //Display property slide
   echo "
-        <div class=\"featured-property\">
-          <div class=\"house-info\">
+        <div class=\"featured-property column\">
+          <div class=\"house-info column\">
             <h2>{$array[$index]['Title']}</h2>
             <h4>{$array[$index]['Suburb']}</h4>
             <h4>Auction Date:</h4>
@@ -49,7 +49,7 @@ function display_featured_property($array,$index=0){
             <a href=\"#\">Learn More &#8594;</a>
           </div>
 
-          <div class=\"house-img\">
+          <div class=\"house-img row\">
             <img src=\"./media/properties/{$array[$index]['PID']}.png\" alt=\"Property Image\">
           </div>
         </div>

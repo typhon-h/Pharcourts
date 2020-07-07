@@ -1,7 +1,7 @@
-<div class="featured">
+<div class="featured column">
 
   <h1>Featured Properties</h1>
-  <div class="featured-slideshow">
+  <div class="featured-slideshow row">
     <!-- Temporary automatic slideshow of property images -->
     <div class="slider-featured">
       <?php

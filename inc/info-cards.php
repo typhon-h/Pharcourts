@@ -1,6 +1,6 @@
-<div class="info-cards">
-  <div class="card">
-    <div class="card-head" id="our-mission">
+<div class="info-cards row">
+  <div class="card column">
+    <div class="card-head column" id="our-mission">
       <h3>Our Mission</h3>
     </div>
     <p>
@@ -12,8 +12,8 @@
     <a href="#">Read More...</a>
   </div>
 
-  <div class="card">
-    <div class="card-head" id="most-trusted">
+  <div class="card column">
+    <div class="card-head column" id="most-trusted">
       <h3>Most Trusted</h3>
     </div>
     <p>
@@ -25,8 +25,8 @@
     <a href="#">Read More...</a>
   </div>
 
-  <div class="card">
-    <div class="card-head" id="enquire-today">
+  <div class="card column">
+    <div class="card-head column" id="enquire-today">
       <h3>Enquire Today</h3>
     </div>
     <p>
