@@ -215,17 +215,17 @@ ul{
 }
 
 
-#our-mission{ /*Card heading bg image */
+#card-1{ /*Card heading bg image */
   background-image: url("../media/our-mission.png");
   background-position: top;
 }
 
-#most-trusted{ /*Card heading bg image */
+#card-2{ /*Card heading bg image */
   background-image: url("../media/most-trusted.png");
   background-position: center;
 }
 
-#enquire-today{ /*Card heading bg image */
+#card-3{ /*Card heading bg image */
   background-image: url("../media/enquire-today.png");
   background-position: center;
 }
