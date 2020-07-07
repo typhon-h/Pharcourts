@@ -5,5 +5,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="shortcut icon" type="image/x-icon" href="./media/favicon.ico" />
   <title>Pharcourts</title>
-  <?php include "./inc/connect.php"; ?> <!-- Connect to database -->
+  <?php include "./inc/connect.php"; //Connect to database
+        include "./inc/functions.php"; //Access to user-defined functions
+  ?>
 </head>
