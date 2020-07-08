@@ -25,12 +25,12 @@
                   <div class=\"additional-selects row\">
                     <label for=\"min-". strtolower($option) ."\">Min:</label>
                     <select name=\"min-". strtolower($option) ."\" id=\"min-". strtolower($option) ."\">";
-                      include './inc/search_additional_options.php';
+                      include './inc/search-additional-options.php';
           echo "
                     </select>
                     <label for=\"max-". strtolower($option) ."\">Max:</label>
                     <select name=\"max-". strtolower($option) ."\" id=\"max-". strtolower($option) ."\">";
-                    include './inc/search_additional_options.php';
+                    include './inc/search-additional-options.php';
           echo "
                     </select>
                   </div>
