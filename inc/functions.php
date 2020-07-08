@@ -28,6 +28,7 @@ function get_featured_properties(){
 
 }
 
+
 function display_featured_property($array,$index=0){
   //Default index is 0
 
@@ -57,9 +58,18 @@ function display_featured_property($array,$index=0){
   return;
 }
 
+
 function format_date($date){ //Date in format YYYY-MM-DD
   list($year, $month, $day) = explode('-',$date);
   $new_date = "{$day}/{$month}/{$year}"; //Convert to DD/MM/YYYY
   return $new_date; //Return reformatted date
 }
+
+
+function get_active_page(){ //Get active page as 'example' instead of '/pharcourts/example.php'
+  $address = $_SERVER['PHP_SELF']; // Get as /pharcourts/example.php
+  $components = explode('/', $address); //Get as array
+  return str_replace('.php', '', end($components)); //Return last element
+}
+
  ?>

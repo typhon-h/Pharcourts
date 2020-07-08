@@ -3,7 +3,7 @@
   $values_count = 10; //Number of Options
   $increment = 1; //Increment of each option (starting at 1)
 
-  if ($option == 'Price'){
+  if ($option == 'Price'){ //Inherited from search.php
     $increment = 100000; //Increment for price as different scale
   }
 
