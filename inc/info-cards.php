@@ -10,7 +10,7 @@
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
         ea commodo consequat.
       </p>
-      <a href="#">Read More...</a>
+      <a href="./about-us.php">Read More...</a>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
         ea commodo consequat.
       </p>
-      <a href="#">Read More...</a>
+      <a href="./about-us.php">Read More...</a>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
         ea commodo consequat.
       </p>
-      <a href="#">Read More...</a>
+      <a href="./contact-us.php">Read More...</a>
     </div>
   </div>
 </div>
