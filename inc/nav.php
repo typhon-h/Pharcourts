@@ -1,12 +1,12 @@
 <div class="nav row">
-   <img class = "logo" src="./media/logo.png" alt="Logo">
+   <a href="./index.php" id="logo-link"><img class = "logo" src="./media/logo.png" alt="Logo"></a>
    <div class="nav-items row">
      <div class="nav-buttons row">
-       <a href="#">Home</a>
+       <a href="./index.php">Home</a>
        <a href="#">Listings</a>
        <a href="#">Agents</a>
-       <a href="#">About Us</a>
-       <a href="#">Contact Us</a>
+       <a href="./about-us.php">About Us</a>
+       <a href="./contact-us.php">Contact Us</a>
      </div>
 
      <div class="nav-login">
