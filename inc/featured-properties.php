@@ -7,8 +7,8 @@
       <?php
       //Echo 3 properties
         $properties = get_featured_properties(); //Get array of assoc arrays
-        for($index = 0; $index < sizeof($properties); $index++){
-          display_featured_property($properties,$index); //Echo each property
+        foreach($properties as $property){
+          display_featured_property($property); //Echo each property
         }
        ?>
     </div>

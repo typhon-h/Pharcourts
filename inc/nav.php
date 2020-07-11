@@ -4,7 +4,7 @@
      <div class="nav-buttons row">
        <a href="./index.php">Home</a>
        <a href="#">Listings</a>
-       <a href="#">Agents</a>
+       <a href="./agents.php">Agents</a>
        <a href="./about-us.php">About Us</a>
        <a href="./contact-us.php">Contact Us</a>
      </div>
