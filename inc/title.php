@@ -26,7 +26,7 @@
   <?php
     //Display search in title for index page
     if ($active_page == 'index'){
-      include './inc/search.php';
+      include './inc/search-form.php';
     }
    ?>
  </div>

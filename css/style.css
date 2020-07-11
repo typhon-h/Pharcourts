@@ -26,6 +26,10 @@ ul{
   list-style: none;
 }
 
+input[type=submit]:hover{
+  cursor:pointer;
+}
+
 .row{
   display: -webkit-flex;
   display: -ms-flex;
@@ -110,9 +114,7 @@ ul{
 /* _________________________________________________________________________ */
 
 .content{
-  justify-content: center;
-  -ms-align-items: center;
-  align-items: center;
+  justify-content: space-around;
   padding: 2rem;
   border-top: 0.1em solid black;
 }
@@ -244,6 +246,35 @@ ul{
   margin: 0;
   overflow:hidden;
   text-align:center;
+}
+
+/* _________________________________________________________________________ */
+/* Contact Us Info */
+.contact-info{
+  width: 50%;
+  padding:2rem;
+  padding-right:0;
+  padding-top:0;
+  -ms-align-items: center;
+  align-items: center;
+
+  border-left: 0.2em solid #1A1B1A;
+}
+
+.contact-info .row{
+  width: 100%;
+  height: 20rem;
+  justify-content: space-between;
+}
+
+.contact-desc{
+  width: 30%;
+}
+.contact-map{
+  width: 65%;
+  height: 100%;
+  border: 0.1em solid #1A1B1A;
+
 }
 
 /* _________________________________________________________________________ */
@@ -702,6 +733,50 @@ font-family: Verdana, sans-serif;
   background-color: transparent;
   border: none;
   border-bottom: 0.2em solid #FFF;
+}
+
+/* _________________________________________________________________________ */
+/* Contact Form */
+.contact-form{
+  width: 50%;
+  height: auto;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.contact-form .row{
+  margin: 0.5em;
+  justify-content: space-between;
+  width: 70%;
+  padding: 0 1em;
+}
+
+.contact-form-field,textarea{
+  border: 0.1em solid #1A1B1A;
+}
+
+.contact-form-field{
+  -ms-align-items: center;
+  align-items: center;
+  width: 45%;
+  height: 2.5rem;
+  padding-left:0.5em;
+  font-size: 1em;
+}
+
+.contact-message{
+  resize: none;
+  width: 100%;
+  height: 10rem;
+  font-family: inherit;
+  font-size:1.2em;
+  padding:1em;
+}
+
+.contact-submit{
+  width: 70%;
+  padding: 0.3em;
+  font-size:1.2em;
 }
 
 /* _________________________________________________________________________ */

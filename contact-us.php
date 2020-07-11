@@ -11,8 +11,10 @@
     <!-- Title Section -->
     <?php include "./inc/title.php"; ?>
 
-    <div class="content">
+    <div class="content row">
+      <?php include "./inc/contact-form.php"; ?>
 
+      <?php include "./inc/contact-info.php"; ?>
     </div>
 
     <!-- Footer -->

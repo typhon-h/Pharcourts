@@ -11,7 +11,7 @@
     <!-- Title Section -->
     <?php include "./inc/title.php"; ?>
 
-    <div class="content">
+    <div class="content column">
       <!-- Featured Properties -->
       <?php include "./inc/featured-properties.php"; ?>
        <hr class="solid">
