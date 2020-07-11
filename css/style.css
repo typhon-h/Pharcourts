@@ -96,6 +96,7 @@ input[type=submit]:hover{
   justify-content: center;
   -ms-align-items: center;
   align-items: center;
+  min-height: 12rem;
   padding: 2rem;
   padding-top: 12rem;
   padding-bottom: 3rem;
@@ -117,6 +118,8 @@ input[type=submit]:hover{
   justify-content: space-around;
   padding: 2rem;
   border-top: 0.1em solid black;
+  -ms-align-items: center;
+  align-items: center;
 }
 
 /* _________________________________________________________________________ */
@@ -277,6 +280,47 @@ input[type=submit]:hover{
 
 }
 
+/* _________________________________________________________________________ */
+/* About Us Info */
+
+.about-info{
+  -ms-align-items: center;
+  align-items: center;
+}
+.about-mission{
+  width: 70%;
+  justify-content: flex-end;
+}
+.about-story{
+  height: auto;
+  width: 70%;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.about-mission p, .about-story p{
+  text-align: center;
+  height: 100%;
+  padding:0;
+  margin:0;
+}
+.about-mission p{
+  width: 40%;
+  margin-top: 4em;
+}
+
+.about-mission img{
+  width: 40%;
+  border: 0.1em solid #1A1B1A;
+  margin-left:3em;
+  margin-bottom:2em;
+}
+
+.about-story img{
+  width: 40%;
+  border: 0.1em solid #1A1B1A;
+  margin-right:3em;
+}
 /* _________________________________________________________________________ */
 /* Footer */
 .footer{
@@ -450,6 +494,11 @@ input[type=submit]:hover{
 }
 
 /* _________________________________________________________________________ */
+/* About Page Info */
+.about-info img{
+  box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
+}
+/* _________________________________________________________________________ */
 /* Footer */
 
 .footer{
@@ -543,7 +592,16 @@ font-family: Verdana, sans-serif;
   font-size: 3em;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
+/* _________________________________________________________________________ */
+/* About Page Info */
+.about-info h1{
+  text-decoration: underline;
+}
 
+.about-mission p{
+  font-size: 1.3em;
+  font-style: italic;
+}
 /* _________________________________________________________________________ */
 /* Footer */
 .newsletter{
