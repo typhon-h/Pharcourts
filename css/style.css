@@ -123,8 +123,8 @@ input[type=submit]:hover{
   justify-content: space-around;
   padding: 2rem;
   border-top: 0.1em solid black;
-  -ms-align-items: center;
-  align-items: center;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
 }
 
 /* _________________________________________________________________________ */
@@ -214,6 +214,7 @@ input[type=submit]:hover{
   width: 28%;
   height: 25rem;
   padding: 0;
+  margin-bottom: 2rem;
   overflow: hidden;
 }
 
@@ -224,6 +225,7 @@ input[type=submit]:hover{
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 
@@ -340,6 +342,31 @@ input[type=submit]:hover{
   border: 0.1em solid #1A1B1A;
   margin-right:3em;
 }
+
+/* _________________________________________________________________________ */
+/* Listings Page */
+.listings-content{
+  width: 80%;
+  height: auto; /* Default for development */
+  border: 1px solid black;
+  padding: 0 2rem;
+}
+
+.listings-items{
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sidebar{
+  width: 15%;
+  /* border: 1px solid black; */
+  text-align: center;
+  justify-content: flex-start;
+  overflow: hidden; /* Default for development */
+}
+
 /* _________________________________________________________________________ */
 /* Footer */
 .footer{
@@ -522,6 +549,10 @@ input[type=submit]:hover{
   box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
 }
 /* _________________________________________________________________________ */
+/* Listings Page */
+
+/* Stuff and things */
+/* _________________________________________________________________________ */
 /* Footer */
 
 .footer{
@@ -614,6 +645,13 @@ font-family: Verdana, sans-serif;
 .card-head{
   font-size: 3em;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
+}
+
+.listings-content .card-head h3{
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-details a{
@@ -709,6 +747,11 @@ font-family: Verdana, sans-serif;
               visibility 1s;
 }
 
+.card-head h3{
+  transition: font-size 0.5s,
+              white-space 0.5s;
+}
+
 .card:hover{
   transform: scale(1.1,1.1); /*Zoom slightly on hover*/
 }
@@ -716,6 +759,11 @@ font-family: Verdana, sans-serif;
 .card:hover > .card-head{ /*Collapse Head*/
   height: 45%;
   font-size: 2rem;
+}
+
+.card:hover > .card-head h3{
+  white-space: normal;
+  font-size: 1.5rem;
 }
 
 .card:hover > .card-body{ /*Expand Description*/
@@ -860,6 +908,23 @@ font-family: Verdana, sans-serif;
   font-size:1.2em;
 }
 
+/* _________________________________________________________________________
+/* Sort Form */
+
+.listings-sort-form{
+  justify-content: space-around;
+  margin:0.5em;
+}
+
+.listings-sort-form-head{
+  background-image: radial-gradient();
+}
+
+.listings-sort-form select{
+  margin: 0.5em 0 2em 0;
+  padding:0.2rem;
+  text-align-last: center;
+}
 /* _________________________________________________________________________ */
 /* Subscribe Form */
 .subscribe-form input{

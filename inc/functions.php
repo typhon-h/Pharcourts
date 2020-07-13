@@ -50,7 +50,7 @@ function display_featured_property($property){
               <li>Garage Spaces: <span class=\"quantity\">{$property['GarageSpaces']}</span></li>
              </ul>
 
-            <a href=\"#\">Learn More &#8594;</a>
+            <a href=\"#\">Learn More &#8594;</a> <!-- Right Arrow -->
           </div>
 
           <div class=\"house-img row\">
@@ -75,20 +75,23 @@ function get_active_page(){ //Get active page as 'example' instead of '/pharcour
   return str_replace('.php', '', end($components)); //Return last element
 }
 
-function get_all_agents(){
+
+function get_from_table($table_name,$condition=1){
   global $conn;
   $query = "SELECT *
-            FROM tbl_agents";
-  $agents = []; //Empty Array
+            FROM {$table_name}
+            WHERE {$condition}";
+  $results = []; //Empty Array
 
-  $result = $conn -> query($query); //Get Agents
+  $query_result = $conn -> query($query); //Get items
 
-  while($agent = $result-> fetch_assoc()){ //Iterate through agents
-    $agents[] = $agent; //Append to array
+  while($item = $query_result-> fetch_assoc()){ //Iterate through items
+    $results[] = $item; //Append to array
   }
 
-  return $agents;
+  return $results;
 }
+
 
 function display_agent_card($agent){
   echo "
@@ -97,7 +100,7 @@ function display_agent_card($agent){
             <h3>{$agent['FName']} {$agent['SName']}</h3>
           </div>
           <div class=\"card-body column\">
-            <p>{$agent['Qualification']}</p>
+            <p><i>{$agent['Qualification']}</i></p>
 
             <div class=\"contact-details column\">
               <b>Contact:</b>

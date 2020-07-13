@@ -8,5 +8,6 @@
   <?php
     include "./inc/connect.php"; //Connect to database
     include "./inc/functions.php"; //Access to user-defined functions
+    $active_page = get_active_page(); //Get active page and make available to whole website
   ?>
 </head>

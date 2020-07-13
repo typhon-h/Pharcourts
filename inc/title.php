@@ -1,5 +1,4 @@
 <?php
-  $active_page = get_active_page();
 
   if ($active_page == 'index'){
     $title_text = "Home is where the heart is"; //Slogan
@@ -25,7 +24,7 @@
 
   <?php
     //Display search in title for index page
-    if ($active_page == 'index'){
+    if ($active_page == 'index' OR strpos($active_page,'listings') !== false){
       include './inc/listings-search-form.php';
     }
    ?>
