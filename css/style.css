@@ -149,11 +149,13 @@ input[type=submit]:hover{
    with Testimonials section in Footer */
 
 .house-info{
+  justify-content: space-between;
   -ms-align-items: center;
   align-items: center;
   position: absolute;
   height: 100%;
   width: 10%;
+  text-align: center;
 }
 
 .house-info h2{
@@ -214,7 +216,8 @@ input[type=submit]:hover{
   width: 28%;
   height: 25rem;
   padding: 0;
-  margin-bottom: 2rem;
+  margin: 0 2.66%;
+  margin-bottom: 3.5rem;
   overflow: hidden;
 }
 
@@ -261,11 +264,28 @@ input[type=submit]:hover{
   justify-content: space-between;
 }
 
-.card-body p{
+.card-body > *{
   margin:0;
+}
+
+.card-body p{
   margin: 0 1em;
 }
 
+.property-details{
+  justify-content: space-around;
+  margin-top:0.5em;
+}
+
+.property-detail{
+  width: 10%;
+}
+
+.property-detail img{
+  width: 100%;
+}
+
+.card-body
 .contact-details{
   height: 60%;
   justify-content: space-between;
@@ -348,7 +368,6 @@ input[type=submit]:hover{
 .listings-content{
   width: 80%;
   height: auto; /* Default for development */
-  border: 1px solid black;
   padding: 0 2rem;
 }
 
@@ -356,7 +375,7 @@ input[type=submit]:hover{
   width: 100%;
   height: auto;
   flex-wrap: wrap;
-  justify-content: space-between;
+
 }
 
 .sidebar{
