@@ -11,8 +11,8 @@
     <!-- Title Section -->
     <?php include "./inc/title.php"; ?>
 
-    <div class="content row">
-      <?php include "./inc/listings-sidebar.php"; ?>
+    <div id="content" class="content row">
+      <?php include "./inc/listings-sort-form.php"; ?>
       <?php include "./inc/listings-content.php"; ?>
     </div>
 

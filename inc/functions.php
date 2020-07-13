@@ -96,11 +96,12 @@ function get_active_page(){ //Get active page as 'example' instead of '/pharcour
 }
 
 
-function get_from_table($table_name,$condition=1){
+function get_from_table($table_name,$condition=1,$sort=1,$sort_direction='ASC'){
   global $conn;
   $query = "SELECT *
             FROM {$table_name}
-            WHERE {$condition}";
+            WHERE {$condition}
+            ORDER BY {$sort} {$sort_direction}";
   $results = []; //Empty Array
 
   $query_result = $conn -> query($query); //Get items
