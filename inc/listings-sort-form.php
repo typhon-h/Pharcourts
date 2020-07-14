@@ -29,6 +29,6 @@
     </select>
   </div>
 
-  <input type="submit" name="sort_submit" value="Sort Listings">
+  <input type="submit" name="sort-submit" value="Sort Listings">
   </form>
 </div>

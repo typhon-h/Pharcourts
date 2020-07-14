@@ -1,7 +1,7 @@
-<form name="listings-search" class="search-form column" method="post"> <!-- Search Form -->
+<form name="listings-search" class="search-form column" method="post" action="./listings.php"> <!-- Search Form -->
   <div class="search-items row">
     <input name = "search-bar" type="text" placeholder="Search..." autocomplete="off"> <!-- Always visible -->
-    <input name = "search-button" type="submit" value="Search">
+    <input name = "search-submit" type="submit" value="Search">
   </div>
 
   <!-- Toggle for additional dropdown options -->
