@@ -272,6 +272,14 @@ input[type=submit]:hover{
   margin: 0 1em;
 }
 
+.card input[type=submit]{
+  background:none;
+  border:none;
+  margin: 0;
+  margin-top: 0.5em;
+  padding: 0;
+}
+
 .property-details{
   justify-content: space-around;
   margin-top:0.5em;
@@ -553,12 +561,12 @@ input[type=submit]:hover{
   box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
 }
 
-.card a{ /*Link styling card*/
+.card a, .card input[type=submit]{ /*Link styling card*/
   color: #fff;
-  font-weight: 550; /*bold*/
+  font-weight: 600; /*bold*/
 }
 
-.card a:hover, .card a:active{
+.card a:hover, .card a:active, .card input[type=submit]:hover, .card input[type=submit]:active{
   color: #3C505F;
 }
 
@@ -676,6 +684,11 @@ font-family: Verdana, sans-serif;
 .contact-details a{
   font-weight: 300;
 }
+
+.card input[type=submit]{
+  font-family: inherit;
+  font-size:1.2em;
+}
 /* _________________________________________________________________________ */
 /* About Page Info */
 .about-info h1{
@@ -788,7 +801,7 @@ font-family: Verdana, sans-serif;
 .card:hover > .card-body{ /*Expand Description*/
   visibility: visible;
   height: 55%;
-  padding:1em 0;
+  padding:0.5em 0;
 }
 
 

@@ -129,7 +129,10 @@ function display_agent_card($agent){
               <p>Email: <a href=\"mailto:{$agent['Email']}\">{$agent['Email']}</a></p>
             </div>
 
-            <a href=\"#\">View My Listings</a>
+            <form method=\"post\" action=\"agent-profile.php\">
+              <input type=\"text\" name=\"AID\" value=\"{$agent['AID']}\"hidden />
+              <input type=\"submit\" value=\"View My Listings\"/>
+            </form> <!-- Styling for this is sorted normally with anchor styling, not in Form -->
           </div>
         </div>";
 }
@@ -177,7 +180,11 @@ function display_listing_card($listing){
                </span>
              </div>
 
-            <a href=\"#\">Enquire &#8594;</a>
+             <form method=\"post\" action=\"listing-profile.php\">
+               <input type=\"text\" name=\"LID\" value=\"{$listing['LID']}\"hidden />
+               <input type=\"submit\" value=\"Enquire &#8594;\"/>
+             </form> <!-- Styling for this is sorted normally with anchor styling, not in Form -->
+
           </div>
         </div>";
 }
