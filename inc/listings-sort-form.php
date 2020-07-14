@@ -1,7 +1,7 @@
 <!-- Sort Sidebar -->
 <div class="sidebar column">
   <div class="listings-sort-form-head">
-    <h2>Sort</h2>
+    <h2>All Listings</h2>
     <hr class="solid">
   </div>
   <form method="get" name="listings-sort-form" class="listings-sort-form column">
@@ -29,6 +29,6 @@
     </select>
   </div>
 
-  <input type="submit" name="sort-submit" value="Sort Listings">
+  <input type="submit" name="sort-submit" value="Show">
   </form>
 </div>

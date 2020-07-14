@@ -12,16 +12,16 @@
                        WHERE tbl_listings.Sold = false ";
 
     //Search
-    if(isset($_POST['search-submit'])){
-      $search_field = $_POST['search-bar'];
+    if(isset($_GET['search-submit'])){
+      $search_field = $_GET['search-bar'];
 
-      $price_range = [$_POST['min-price'],$_POST['max-price']];
-      $bedrooms_range = [$_POST['min-bedrooms'],$_POST['max-bedrooms']];
-      $bathrooms_range = [$_POST['min-bathrooms'],$_POST['max-bathrooms']];
+      $price_range = [$_GET['min-price'],$_GET['max-price']];
+      $bedrooms_range = [$_GET['min-bedrooms'],$_GET['max-bedrooms']];
+      $bathrooms_range = [$_GET['min-bathrooms'],$_GET['max-bathrooms']];
 
       //As no wildcard for int eg. BETWEEN % and 5 if statements are required to
       //determine greater than, less than, or between
-      
+
       //Set Price Criteria
       if ($price_range[0] == '' and $price_range[1] == ''){
         $price_criteria = '';
@@ -72,15 +72,14 @@
                                 tbl_properties.Suburb LIKE '%{$search_field}%')
                                 {$price_criteria}
                                 {$bedrooms_criteria}
-                                {$bathrooms_criteria}";
+                                {$bathrooms_criteria} ";
     }
-
-
 
     //Sort
     if(isset($_GET['sort-submit'])){
       $sort_field = $_GET['sort_field']; //Get sort information
       $sort_direction = $_GET['sort_direction'];
+
       //Add to query
       $listings_query .= "ORDER BY {$sort_field} {$sort_direction} ";
     }
