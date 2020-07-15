@@ -123,8 +123,13 @@ input[type=submit]:hover{
   justify-content: space-around;
   padding: 2rem;
   border-top: 0.1em solid black;
-  -ms-align-items: flex-start;
-  align-items: flex-start;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.content p{
+  margin-top: 0;
+  margin-bottom: 2em;
 }
 
 /* _________________________________________________________________________ */
@@ -228,7 +233,7 @@ input[type=submit]:hover{
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 
 
@@ -293,9 +298,9 @@ input[type=submit]:hover{
   width: 100%;
 }
 
-.card-body
 .contact-details{
   height: 60%;
+  min-width: 70%;
   justify-content: space-between;
   /* background-color: #fff; */
 }
@@ -336,39 +341,30 @@ input[type=submit]:hover{
   -ms-align-items: center;
   align-items: center;
 }
-.about-mission{
-  width: 70%;
-  justify-content: flex-end;
-}
-.about-story{
+.about-section{
   height: auto;
   width: 70%;
   -ms-align-items: flex-start;
   align-items: flex-start;
 }
 
-.about-mission p, .about-story p{
+.about-section p{
   text-align: center;
   height: 100%;
   padding:0;
-  margin:0;
-}
-.about-mission p{
-  width: 40%;
-  margin-top: 4em;
+  margin:auto 0;
 }
 
-.about-mission img{
+.about-section img{
   width: 40%;
   border: 0.1em solid #1A1B1A;
-  margin-left:3em;
+  margin:3em;
   margin-bottom:2em;
 }
 
-.about-story img{
-  width: 40%;
-  border: 0.1em solid #1A1B1A;
-  margin-right:3em;
+.our-mission{
+  font-size:1.5em;
+  font-style: italic;
 }
 
 /* _________________________________________________________________________ */
@@ -566,7 +562,7 @@ input[type=submit]:hover{
   font-weight: 600; /*bold*/
 }
 
-.card a:hover, .card a:active, .card input[type=submit]:hover, .card input[type=submit]:active{
+.card a:hover, .card a:active, .card input[type=submit]:hover, .card input[type=submit]:active, .contact-details a:hover, .contact-details a:active{
   color: #3C505F;
 }
 
@@ -575,10 +571,6 @@ input[type=submit]:hover{
 .about-info img{
   box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
 }
-/* _________________________________________________________________________ */
-/* Listings Page */
-
-/* Stuff and things */
 /* _________________________________________________________________________ */
 /* Footer */
 
@@ -645,6 +637,9 @@ font-family: Verdana, sans-serif;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
+.title .contact-details{
+  font-size: 1.2em;
+}
 /* _________________________________________________________________________ */
 /* Featured Properties (Index) */
 .house-info h3{
@@ -674,7 +669,7 @@ font-family: Verdana, sans-serif;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
-.listings-content .card-head h3{
+.listings-items .card-head h3{
   font-size: 2.5rem;
   white-space: nowrap;
   overflow: hidden;

@@ -129,7 +129,7 @@ function display_agent_card($agent){
               <p>Email: <a href=\"mailto:{$agent['Email']}\">{$agent['Email']}</a></p>
             </div>
 
-            <form method=\"post\" action=\"agent-profile.php\">
+            <form method=\"get\" action=\"agent-profile.php\">
               <input type=\"text\" name=\"AID\" value=\"{$agent['AID']}\"hidden />
               <input type=\"submit\" value=\"View My Listings\"/>
             </form> <!-- Styling for this is sorted normally with anchor styling, not in Form -->
@@ -150,7 +150,9 @@ function display_listing_card($listing){
                {$listing['Suburb']}
              </p>
 
-             <h2>$".number_format(floatval($listing['Price']))."</h2>
+             <h2>".
+             (($listing['Sold'])? "Sold":"$".number_format(floatval($listing['Price'])))
+             ."</h2>
 
              <p>
                Auction Date:
@@ -180,7 +182,7 @@ function display_listing_card($listing){
                </span>
              </div>
 
-             <form method=\"post\" action=\"listing-profile.php\">
+             <form method=\"get\" action=\"listing-profile.php\">
                <input type=\"text\" name=\"LID\" value=\"{$listing['LID']}\"hidden />
                <input type=\"submit\" value=\"Enquire &#8594;\"/>
              </form> <!-- Styling for this is sorted normally with anchor styling, not in Form -->
