@@ -990,14 +990,33 @@ font-family: Verdana, sans-serif;
   margin:0.5em;
 }
 
-.listings-sort-form-head{
-  background-image: radial-gradient();
-}
-
 .listings-sort-form select{
   margin: 0.5em 0 2em 0;
   padding:0.2rem;
   text-align-last: center;
+}
+/* _________________________________________________________________________ */
+/* Login Form */
+
+.login-form{
+  width: 40%;
+  justify-content: space-between;
+}
+.login-form input:not([type=submit]){ /*Username and Password Fields*/
+  margin-bottom: 0.5em;
+  padding: 0.5em 0.5em;
+  font-size: 2em;
+}
+.login-form input[type=submit]{ /*Submit Button*/
+  padding:0.25em;
+  margin-top: 1em;
+  font-size: 2em
+}
+.login-error{
+  height: 1em;
+  text-align: center;
+  margin-top:1em;
+  color:#F00;
 }
 /* _________________________________________________________________________ */
 /* Subscribe Form */

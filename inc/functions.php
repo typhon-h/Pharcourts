@@ -104,8 +104,13 @@ function get_from_table($table_name,$condition=1,$sort=1,$sort_direction='ASC'){
             WHERE {$condition}
             ORDER BY {$sort} {$sort_direction}";
   $results = []; //Empty Array
-
   $query_result = $conn -> query($query); //Get items
+
+  $count = $query_result -> num_rows; //Check if empty
+  if($count == 0){
+    return false;
+  }
+
   while($item = $query_result-> fetch_assoc()){ //Iterate through items
     $results[] = $item; //Append to array
   }
@@ -113,6 +118,13 @@ function get_from_table($table_name,$condition=1,$sort=1,$sort_direction='ASC'){
   return $results; //Returns as array of associated arrays
 }
 
+
+function format_page_name($page_name){
+  $formatted_name = str_replace('-', ' ', $page_name); //Add Spaces
+  $formatted_name = ucwords($formatted_name); //Title Case
+
+  return $formatted_name;
+}
 
 function display_agent_card($agent){
   echo "

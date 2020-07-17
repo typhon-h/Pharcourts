@@ -13,6 +13,11 @@
     die("Connection Failed: " . $conn>connect_error);
   }
 
-  // echo "Connection Successful";
+  //Initialize Login Session
+  session_start(); //Session is global associative array
+  if(!isset($_SESSION['IsAdmin'])){
+    $_SESSION['User'] = NULL;
+    $_SESSION['IsAdmin'] = false;
+  }
 
  ?>

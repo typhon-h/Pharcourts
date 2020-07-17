@@ -13,9 +13,12 @@
       $title_text = "{$listing['Address']}";
       break;
 
+    case 'admin-menu':
+      $title_text = "Welcome Back, {$_SESSION['User']}.";
+      break;
+
     default: //Main text is page name
-      $title_text = str_replace('-', ' ', $active_page); //Add spaces
-      $title_text = ucwords($title_text); //Title Case
+      $title_text = format_page_name($active_page);
       break;
   }
  ?>
