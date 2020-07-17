@@ -220,7 +220,7 @@ input[type=submit]:hover{
   align-items: center;
   min-width: 19rem;
   width: 28%;
-  height: 25em;
+  height: 30em;
   padding: 0;
   margin: 0 2.66%;
   margin-bottom: 3.5rem;
@@ -292,7 +292,7 @@ input[type=submit]:hover{
 }
 
 .property-detail{
-  width: 10%;
+  width: 3em;
 }
 
 .property-detail img{
@@ -726,13 +726,6 @@ font-family: Verdana, sans-serif;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
-.listings-items .card-head h3{
-  font-size: 2.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .contact-details a{
   font-weight: 300;
 }
@@ -849,17 +842,17 @@ font-family: Verdana, sans-serif;
   transform: scale(1.1,1.1); /*Zoom slightly on hover*/
 }
 
-.card:hover > .card-head{ /*Collapse Head*/
+.card:hover > .card-head, .static-card > .card-head{ /*Collapse Head*/
   height: 45%;
   font-size: 2rem;
 }
 
-.card:hover > .card-head h3{
+.card:hover > .card-head h3, .static-card > .card-head h3{
   white-space: normal;
   font-size: 1.5rem;
 }
 
-.card:hover > .card-body{ /*Expand Description*/
+.card:hover > .card-body,.static-card  > .card-body{ /*Expand Description*/
   visibility: visible;
   height: 55%;
   padding:0.5em 0;

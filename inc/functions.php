@@ -139,7 +139,7 @@ function display_agent_card($agent){
 
 function display_listing_card($listing){
   echo "
-        <div class=\"card column\">
+        <div class=\"card static-card column\">
           <div class=\"card-head column\" style=\"background-image: url('./media/properties/{$listing['Property']}.png');\">
             <h3>{$listing['Title']}</h3>
           </div>
