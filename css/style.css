@@ -218,8 +218,9 @@ input[type=submit]:hover{
   justify-content:flex-start;
   -ms-align-items: center;
   align-items: center;
+  min-width: 19rem;
   width: 28%;
-  height: 25rem;
+  height: 25em;
   padding: 0;
   margin: 0 2.66%;
   margin-bottom: 3.5rem;
@@ -383,13 +384,58 @@ input[type=submit]:hover{
 }
 
 .sidebar{
+  min-width: 7rem;
   width: 15%;
-  /* border: 1px solid black; */
+  margin-bottom: auto; /*used instead of jc:fs */
   text-align: center;
   justify-content: flex-start;
-  overflow: hidden; /* Default for development */
+  overflow: hidden;
+}
+/* _________________________________________________________________________ */
+/* Listing Profile Page */
+
+.property-image{
+  width: 90%;
+  text-align: center;
+  overflow: hidden;
+  padding: 1em;
+  margin: 2rem;
 }
 
+.property-image img{
+  width:inherit;
+}
+
+.listing-profile-content{
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.listing-info{
+  width: 50%;
+}
+
+.listing-info h1{
+  text-align: center;
+}
+
+.listing-important-info{
+  padding: 1em 0;
+  border: 0.1rem solid #1A1B1A;
+}
+
+.listing-important-info ul{
+  margin-top: 0;
+}
+.listing-important-info li{
+  margin:2em;
+}
+
+.listing-agent{
+  width: 40%;
+  -ms-align-items: center;
+  align-items: center;
+}
 /* _________________________________________________________________________ */
 /* Footer */
 .footer{
@@ -571,6 +617,17 @@ input[type=submit]:hover{
 .about-info img{
   box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
 }
+
+/* _________________________________________________________________________ */
+/* Listing Profile Page */
+.property-image img{
+  box-shadow: 0.5em 0.5em 8px 0.25em #1A1B1A;
+}
+
+.listing-important-info{
+  color: #fff ;
+  background-color: #3C505F;
+}
 /* _________________________________________________________________________ */
 /* Footer */
 
@@ -665,7 +722,7 @@ font-family: Verdana, sans-serif;
 /* _________________________________________________________________________ */
 /* Info Cards (Index) */
 .card-head{
-  font-size: 3em;
+  font-size: 2.25em;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
@@ -693,6 +750,15 @@ font-family: Verdana, sans-serif;
 .about-mission p{
   font-size: 1.3em;
   font-style: italic;
+}
+/* _________________________________________________________________________ */
+/* Listing Profile Page */
+.listing-important-info{
+  font-size:1.2em;
+}
+
+.listing-info h1{
+  text-decoration: underline;
 }
 /* _________________________________________________________________________ */
 /* Footer */
@@ -894,7 +960,7 @@ font-family: Verdana, sans-serif;
 /* _________________________________________________________________________ */
 /* Contact Form */
 .contact-form{
-  width: 50%;
+  min-width: 50%;
   height: auto;
   -ms-align-items: center;
   align-items: center;
