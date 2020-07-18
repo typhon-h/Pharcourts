@@ -939,45 +939,47 @@ font-family: Verdana, sans-serif;
 }
 
 /* _________________________________________________________________________ */
-/* Contact Form */
-.contact-form{
+/* Standard Form */
+.form{
   min-width: 50%;
   height: auto;
   -ms-align-items: center;
   align-items: center;
 }
 
-.contact-form .row{
+.form .row{
   margin: 0.5em;
   justify-content: space-between;
-  width: 70%;
+  min-height: 2.5rem;
+  width: 100%;
   padding: 0 1em;
 }
 
-.contact-form-field,textarea{
-  border: 0.1em solid #1A1B1A;
-}
-
-.contact-form-field{
+.form-field{
   -ms-align-items: center;
   align-items: center;
-  width: 45%;
+  width: 100%;
   height: 2.5rem;
   padding-left:0.5em;
   font-size: 1em;
+  border: 0.1em solid #1A1B1A;
 }
 
-.contact-message{
+select.form-field{
+  height: inherit;
+}
+
+.textarea{
   resize: none;
   width: 100%;
-  height: 10rem;
+  height: 10em;
   font-family: inherit;
   font-size:1.2em;
   padding:1em;
 }
 
-.contact-submit{
-  width: 70%;
+.submit{
+  width: 100%;
   padding: 0.3em;
   font-size:1.2em;
 }
