@@ -30,8 +30,8 @@
 
 
   <div class="row">
-    <label for="agent-image">Select a Profile Picture:</label>
-    <input type="file" name="agent-image" value="Profile Picture" required>
+    <label for="agent-image">Select a Profile Picture: <br> Required File Type: .png | Required Aspect Ratio: 1:1</label>
+    <input type="file" name="agent-image" required>
   </div>
 
 

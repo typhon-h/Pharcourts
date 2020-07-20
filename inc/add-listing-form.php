@@ -71,7 +71,7 @@
   </div>
 
   <div class="row">
-    <label for="listing-image">Select Property Image:</label>
+    <label for="listing-image">Select Property Image: <br> Required File Type: .png | Required Aspect Ratio: 2:1</label>
     <input type="file" name="listing-image" required>
   </div>
 
