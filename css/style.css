@@ -1014,10 +1014,11 @@ select.form-field{
   margin-top: 1em;
   font-size: 2em
 }
-.login-error{
-  height: 1em;
+.error{
+  font-size: 1em;
+  height: auto;
   text-align: center;
-  margin-top:1em;
+  margin:1em 0;
   color:#F00;
 }
 /* _________________________________________________________________________ */

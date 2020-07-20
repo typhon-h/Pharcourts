@@ -2,7 +2,7 @@
 //Establish connection to database
   $dbhost = 'localhost';
   $dbname = 'pharcourts';
-  $dbuser = 'default'; //For full access use 'root'
+  $dbuser = 'root';
   $dbpass = '';
 
   //Create connection

@@ -12,6 +12,10 @@
     <?php include "./inc/title.php"; ?>
 
     <div class="content column">
+      <span class="error">
+        <?php include "./inc/add-listing-validation.php"; ?>
+      </span>
+
       <?php include "./inc/add-listing-form.php"; ?>
     </div>
 

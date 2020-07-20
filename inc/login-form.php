@@ -35,7 +35,7 @@
 
   <input type="submit" name="login-submit" value="Login">
 
-  <span class='login-error'>
+  <span class='error'>
     <?php
       echo $login_error_message;
     ?>

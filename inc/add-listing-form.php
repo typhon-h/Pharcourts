@@ -1,6 +1,6 @@
 
-<form class="form column" action"./inc/add-listing-validation" method="post" enctype="multipart/form-data">
-
+<form class="form column" method="post" enctype="multipart/form-data">
+  <!-- Listing Fields -->
   <div class="row">
     <input class="form-field" type="text" name="listing-title" placeholder="Title" required>
   </div>
@@ -27,6 +27,7 @@
     </select>
   </div>
 
+  <!-- Property Fields -->
   <div class="row">
     <!-- regex Address must be number followed by at least two words -->
     <input class="form-field" type="text" name="listing-address" placeholder="Address..." title="Address eg. 123 Main Street" pattern="^\d+(\s[A-z]+){2,}" required>
@@ -37,20 +38,21 @@
 
   <div class="row">
     <!-- Regex All Fields require 0-99 integer -->
-    <input class="form-field" type="number" name="listing-bedrooms" placeholder="Bedrooms..." title="Bedrooms 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
+    <input class="form-field" type="text" name="listing-bedrooms" placeholder="Bedrooms..." title="Bedrooms 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
 
-    <input class="form-field" type="number" name="listing-bathrooms" placeholder="Bathrooms..." title="Bathrooms 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
+    <input class="form-field" type="text" name="listing-bathrooms" placeholder="Bathrooms..." title="Bathrooms 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
 
-    <input class="form-field" type="number" name="listing-toilets" placeholder="Toilets..." title="Toilets 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
+    <input class="form-field" type="text" name="listing-toilets" placeholder="Toilets..." title="Toilets 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
 
-    <input class="form-field" type="number" name="listing-garage-Spaces" placeholder="Garage Spaces..." title="Garage Spaces 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
+    <input class="form-field" type="text" name="listing-garage-spaces" placeholder="Garage Spaces..." title="Garage Spaces 0-99" pattern = "^([0-9]|[1-8][0-9]|9[0-9])$" required>
   </div>
 
   <div class="row">
-    <input class="form-field" type="number" name="listing-size" placeholder="Size..." title="Size(sqm) eg. 598"required>
+    <!-- Regex number in range 1-32767 (smallint size) -->
+    <input class="form-field" type="number" name="listing-size" placeholder="Size(sqm)..." title="Size(sqm) eg. 598" pattern="^([1-9]|[1-8][0-9]|9[0-9]|[1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|[1-8][0-9]{3}|9[0-8][0-9]{2}|99[0-8][0-9]|999[0-9]|[12][0-9]{4}|3[01][0-9]{3}|32[0-6][0-9]{2}|327[0-5][0-9]|3276[0-7])$" required>
 
     <!-- Regex 4 digit number -->
-    <input class="form-field" type="number" name="listing-year" placeholder="Year..." title="Year eg. 1999" pattern="^\d{4}$" required>
+    <input class="form-field" type="text" name="listing-year" placeholder="Year..." title="Year eg. 1999" pattern="^\d{4}$" required>
 
     <input class="form-field" type="text" name="listing-construction" placeholder="Construction..." title="Construction eg. Brick" required>
   </div>

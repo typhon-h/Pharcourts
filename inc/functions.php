@@ -4,16 +4,7 @@ declare(strict_types=1); // All variables must be the declared type
 
 function get_featured_properties(){
   global $conn;
-  $query = "SELECT tbl_listings.Title,
-                   tbl_listings.AuctionDate,
-                   tbl_properties.PCondition,
-                   tbl_properties.Suburb,
-                   tbl_properties.Bedrooms,
-                   tbl_properties.Bathrooms,
-                   tbl_properties.GarageSpaces,
-                   tbl_properties.Toilets,
-                   tbl_properties.PID,
-                   tbl_listings.LID
+  $query = "SELECT *
             FROM tbl_listings
             INNER JOIN tbl_properties
               ON tbl_listings.Property=tbl_properties.PID
@@ -197,4 +188,61 @@ function display_listing_card($listing){
           </div>
         </div>";
 }
+
+
+function get_aspect_ratio($width,$height){
+  if($width<$height){
+    $lower_number = $width;
+  }
+  else{
+    $lower_number = $height;
+  }
+
+  $ratio = ($width/$lower_number).":".($height/$lower_number);
+  return $ratio;
+}
+
+
+function check_image($image, $target_location, $aspect_ratio=""){
+  $file_type = strtolower(pathinfo($target_location,PATHINFO_EXTENSION));
+
+  $image_info = getimagesize($image['tmp_name']);
+
+
+  //Check if image
+  if($image_info == false){
+    echo "File is not an image";
+    return false;
+  }
+
+  //Check file exists
+  if(file_exists($target_location)){
+    echo "File already exists";
+    return false;
+  }
+
+  //Check File size
+  if($image["size"] > 500000){
+    echo "File too large";
+    return false;
+  }
+
+  //Check if not png
+  if($file_type != "png"){
+    echo "File must be png format";
+    return false;
+  }
+
+  //Check correct aspect ratio
+  $image_width = $image_info[0];
+  $image_height = $image_info[1];
+  //If aspect ratio is set and image matches aspect ratio
+  if($aspect_ratio !== "" && get_aspect_ratio($image_width,$image_height) !== $aspect_ratio){
+    echo "Image must have 2:1 Aspect Ratio";
+    return false;
+  }
+
+  return true;
+}
+
  ?>
