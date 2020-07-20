@@ -60,11 +60,12 @@
   <div class="row">
     <select class="form-field" name="listing-condition" required>
       <option value="" selected disabled>Property Condition...</option>
-      <option value="Poor">Poor</option>
-      <option value="Fair">Fair</option>
-      <option value="Good">Good</option>
-      <option value="Excellent">Excellent</option>
-      <option value="New">New</option>
+      <?php
+        $options = ['Poor', 'Fair', 'Good', 'Excellent', 'New'];
+        foreach($options as $option){
+          echo "<option value=\"{$option}\">{$option}</option>";
+        }
+       ?>
     </select>
 
     <input class="form-field" type="text" name="listing-insulation" placeholder="Insulation..." title="Insulation eg. Roof, Walls">
@@ -75,5 +76,5 @@
     <input type="file" name="listing-image" required>
   </div>
 
-  <input class="submit" type="submit" name="contact-submit">
+  <input class="submit" type="submit" name="listing-submit">
 </form>

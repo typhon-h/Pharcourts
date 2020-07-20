@@ -35,5 +35,5 @@
   </div>
 
 
-  <input class="submit" type="submit" name="contact-submit">
+  <input class="submit" type="submit" name="agent-submit">
 </form>

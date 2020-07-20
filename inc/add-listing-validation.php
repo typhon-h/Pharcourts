@@ -37,6 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         )";
       //Add property
       if(!$conn -> query($property_query)){ //Run query and if fails
+        echo $conn -> error;
         break;
       }
 
@@ -71,6 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       //Add listing
       if(!$conn -> query($listing_query)){ //Run query and if fails
         //Remove property so there isn't unassigned property
+        echo $conn -> error;
         $conn -> query($remove_query);
         break; //Show error
       }
@@ -80,7 +82,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       //Add listings to start of string as listing must be removed before property due to relationship in PHPMyAdmin
       $remove_query = "DELETE FROM tbl_listings
                        WHERE tbl_listings.LID = {$LID};" . $remove_query;
-      
+
       $target_location = "./media/properties/{$PID}.png";
       $image_valid = check_image($image,$target_location,"2:1"); //Check image is valid
 
@@ -99,7 +101,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 echo "<br>";
 echo "An error has occured adding this listing. Please try again";
 echo "<br>";
-echo $conn -> error;
 //Link Back to form
 }
  ?>

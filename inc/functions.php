@@ -215,12 +215,6 @@ function check_image($image, $target_location, $aspect_ratio=""){
     return false;
   }
 
-  //Check file exists
-  if(file_exists($target_location)){
-    echo "File already exists";
-    return false;
-  }
-
   //Check File size
   if($image["size"] > 500000){
     echo "File too large";

@@ -1022,6 +1022,19 @@ select.form-field{
   color:#F00;
 }
 /* _________________________________________________________________________ */
+/* Edit Select Form */
+select[name*="edit"]{
+  padding: 0.5em 0.5em;
+  height:15rem;
+  overflow-x: hidden;
+  overflow-y:auto;
+}
+
+select[name*="edit"] option{
+  margin: 0.25em 0;
+}
+
+/* _________________________________________________________________________ */
 /* Subscribe Form */
 .subscribe-form input{
   font-size: 0.6em;
