@@ -71,6 +71,7 @@
   </div>
 
   <div class="row">
+    <label for="listing-image">Select Property Image:</label>
     <input type="file" name="listing-image" required>
   </div>
 

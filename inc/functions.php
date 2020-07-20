@@ -238,7 +238,7 @@ function check_image($image, $target_location, $aspect_ratio=""){
   $image_height = $image_info[1];
   //If aspect ratio is set and image matches aspect ratio
   if($aspect_ratio !== "" && get_aspect_ratio($image_width,$image_height) !== $aspect_ratio){
-    echo "Image must have 2:1 Aspect Ratio";
+    echo "Image must have {$aspect_ratio} Aspect Ratio";
     return false;
   }
 
