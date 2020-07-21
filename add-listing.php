@@ -11,12 +11,15 @@
     <!-- Title Section -->
     <?php include "./inc/title.php"; ?>
 
-    <div class="content column">
-      <span class="error">
-        <?php include "./inc/add-listing-validation.php"; ?>
-      </span>
+    <div class="content row">
+      <?php include "./inc/add-listing-sidebar.php" ?>
+      <div class="column">
+        <span class="error">
+          <?php include "./inc/add-listing-validation.php"; ?>
+        </span>
 
-      <?php include "./inc/add-listing-form.php"; ?>
+        <?php include "./inc/add-listing-form.php"; ?>
+      </div>
     </div>
 
     <!-- Footer -->

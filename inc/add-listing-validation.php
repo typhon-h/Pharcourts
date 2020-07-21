@@ -1,7 +1,17 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+
+  if(isset($_POST['property-submit'])){
+    $PID = $_POST['add-property'];
+    $property = get_from_table('tbl_properties',"tbl_properties.PID = {$PID}")[0];
+  }
+
+  if(isset($_POST['listing-submit'])){
+    $remove_query = "";
     while(true) { //Doesn't actually loop just used for compatiability with break
       //Property
+      $PID = $_POST['PID'];
       $address = $_POST['listing-address'];
       $suburb = $_POST['listing-suburb'];
       $bedrooms = $_POST['listing-bedrooms'];
@@ -19,22 +29,41 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $insulation = "None";
       }
 
-      $property_query = "INSERT INTO tbl_properties(
-                          PID, Address,
-                          Suburb, Bedrooms,
-                          Bathrooms, Toilets,
-                          GarageSpaces, Size,
-                          Year, Construction,
-                          PCondition, Insulation
-                        )
-                        VALUES(
-                          NULL, '{$address}',
-                          '{$suburb}', {$bedrooms},
-                          {$bathrooms}, {$toilets},
-                          {$garage_spaces}, {$size},
-                          {$year}, '{$construction}',
-                          '{$condition}', '{$insulation}'
-                        )";
+      if(isset($PID)){ //If existing property used update
+        $property_query = "UPDATE tbl_properties
+                         SET
+                            Address = '{$address}',
+                            Suburb = '{$suburb}',
+                            Bedrooms = {$bedrooms},
+                            Bathrooms = {$bathrooms},
+                            Toilets = {$toilets},
+                            GarageSpaces = {$garage_spaces},
+                            Size = {$size},
+                            Year = {$year},
+                            Construction = '{$construction}',
+                            PCondition = '{$condition}',
+                            Insulation = '{$insulation}'
+                         WHERE PID = {$PID};";
+      }
+      else{ //Else add new property
+        $property_query = "INSERT INTO tbl_properties(
+                            PID, Address,
+                            Suburb, Bedrooms,
+                            Bathrooms, Toilets,
+                            GarageSpaces, Size,
+                            Year, Construction,
+                            PCondition, Insulation
+                          )
+                          VALUES(
+                            NULL, '{$address}',
+                            '{$suburb}', {$bedrooms},
+                            {$bathrooms}, {$toilets},
+                            {$garage_spaces}, {$size},
+                            {$year}, '{$construction}',
+                            '{$condition}', '{$insulation}'
+                          )";
+      }
+
       //Add property
       if(!$conn -> query($property_query)){ //Run query and if fails
         echo $conn -> error;
@@ -42,10 +71,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
 
       //Get PID of most recent property
-      $PID = get_from_table('tbl_properties',1,'tbl_properties.PID','DESC')[0]['PID'];
-      //Define query to remove property in case listing or image fails
-      $remove_query = "DELETE FROM tbl_properties
-                          WHERE tbl_properties.PID = {$PID};";
+      if(!isset($PID)){ //If existing property not used get new PID
+        $PID = get_from_table('tbl_properties',1,'tbl_properties.PID','DESC')[0]['PID'];
+        //Define query to remove property in case listing or image fails
+        $remove_query = "DELETE FROM tbl_properties
+                            WHERE tbl_properties.PID = {$PID};";
+      }
 
 
       //Listing
@@ -53,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $description = $_POST['listing-description'];
       $price = $_POST['listing-price'];
       //Most recent property to be added
-      $property = get_from_table('tbl_properties',1,'tbl_properties.PID','DESC')[0]['PID'];
+      $property = $PID;
       $agent = $_POST['listing-agent'];
       $auction_date = $_POST['listing-auction-date'];
 
@@ -77,30 +108,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         break; //Show error
       }
 
-      //Get LID of most recent property
-      $LID = get_from_table('tbl_listings',1,'tbl_listings.LID','DESC')[0]['LID'];
-      //Add listings to start of string as listing must be removed before property due to relationship in PHPMyAdmin
-      $remove_query = "DELETE FROM tbl_listings
-                       WHERE tbl_listings.LID = {$LID};" . $remove_query;
+      if(!isset($_POST['PID']) ||  $image['error'] != 4){ //New property is being added or image has been uploaded
+        //Get LID of most recent property
+        $LID = get_from_table('tbl_listings',1,'tbl_listings.LID','DESC')[0]['LID'];
+        //Add listings to start of string as listing must be removed before property due to relationship in PHPMyAdmin
+        $remove_query = "DELETE FROM tbl_listings
+                         WHERE tbl_listings.LID = {$LID};" . $remove_query;
 
-      $target_location = "./media/properties/{$PID}.png";
-      $image_valid = check_image($image,$target_location,"2:1"); //Check image is valid
+        $target_location = "./media/properties/{$PID}.png";
+        $image_valid = check_image($image,$target_location,"2:1"); //Check image is valid
 
-      if ($image_valid && move_uploaded_file($image["tmp_name"], $target_location)) { //If image can be uploaded and is uploaded successfully
-        //Redirect to added listing page (ending while loop)
+        if ($image_valid && move_uploaded_file($image["tmp_name"], $target_location)) { //If image can be uploaded and is uploaded successfully
+          //Redirect to added listing page (ending while loop)
+          header("Location: ./listing-profile.php?LID={$LID}");
+        }
+        else{
+          //Remove property and listing
+          $conn -> multi_query($remove_query);
+          break;
+        }
+      }
+
+      else{
         header("Location: ./listing-profile.php?LID={$LID}");
       }
-      else{
-        //Remove property and listing
-        $conn -> multi_query($remove_query);
-        break;
-      }
+
     }
 
-//Display Error if loop broken
-echo "<br>";
-echo "An error has occured adding this listing. Please try again";
-echo "<br>";
-//Link Back to form
+    //Display Error if loop broken
+    echo "<br>";
+    echo "An error has occured adding this listing. Please try again";
+    echo "<br>";
+      }
 }
  ?>
