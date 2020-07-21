@@ -239,4 +239,25 @@ function check_image($image, $target_location, $aspect_ratio=""){
   return true;
 }
 
+
+function secure(string $string){
+  global $conn;
+  // Add escape character to problematic characters eg. " ' \
+  $string = $conn -> real_escape_string($string);
+  //Remove HTML, PHP, JS tags to prevent injection
+  $string = strip_tags($string);
+  return $string;
+}
+
+
+function formalize_string(string $string){
+  // Takes string and returns formatted
+
+  $string = ltrim(rtrim($string)); // Trim whitespace from start and end
+  $string = ucwords(strtolower($string)); // Title case
+  //Security
+  $string = secure($string);
+  return $string;
+}
+
  ?>

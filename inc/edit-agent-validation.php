@@ -2,7 +2,7 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(isset($_POST['edit-submit'])){
-    $agent = $_POST['edit-agent'];
+    $agent = secure($_POST['edit-agent']);
     $query = "SELECT *
               FROM tbl_agents
               WHERE tbl_agents.AID = {$agent}";
@@ -14,15 +14,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if(isset($_POST['agent-update'])){
     while(true) { //Doesn't actually loop just used for compatiability with break
       //Property
-      $fname = $_POST['agent-fname'];
-      $sname = $_POST['agent-sname'];
-      $qualification = $_POST['agent-qualification'];
-      $mobileph = $_POST['agent-mobileph'];
-      $workph = $_POST['agent-workph'];
-      $email = $_POST['agent-email'];
-      $bio = $_POST['agent-bio'];
-      $image = $_FILES['agent-image'];
-      $AID = $_POST['AID'];
+      $fname = formalize_string($_POST['agent-fname']);
+      $sname = formalize_string($_POST['agent-sname']);
+      $qualification = formalize_string($_POST['agent-qualification']);
+      $mobileph = secure($_POST['agent-mobileph']);
+      $workph = secure($_POST['agent-workph']);
+      $email = secure($_POST['agent-email']);
+      $bio = secure($_POST['agent-bio']);
+      $image = secure($_FILES['agent-image']);
+      $AID = secure($_POST['AID']);
 
       $update_query = "UPDATE tbl_agents
                        SET

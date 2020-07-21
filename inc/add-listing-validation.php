@@ -3,7 +3,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
   if(isset($_POST['property-submit'])){
-    $PID = $_POST['add-property'];
+    $PID = secure($_POST['add-property']);
     $property = get_from_table('tbl_properties',"tbl_properties.PID = {$PID}")[0];
   }
 
@@ -11,19 +11,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $remove_query = "";
     while(true) { //Doesn't actually loop just used for compatiability with break
       //Property
-      $PID = $_POST['PID'];
-      $address = $_POST['listing-address'];
-      $suburb = $_POST['listing-suburb'];
-      $bedrooms = $_POST['listing-bedrooms'];
-      $bathrooms = $_POST['listing-bathrooms'];
-      $toilets = $_POST['listing-toilets'];
-      $garage_spaces = $_POST['listing-garage-spaces'];
-      $size = $_POST['listing-size'];
-      $year = $_POST['listing-year'];
-      $construction = $_POST['listing-construction'];
-      $condition = $_POST['listing-condition'];
-      $insulation = $_POST['listing-insulation'];
-      $image = $_FILES['listing-image'];
+      $PID = secure($_POST['PID']);
+      $address = formalize_string($_POST['listing-address']);
+      $suburb = formalize_string($_POST['listing-suburb']);
+      $bedrooms = secure($_POST['listing-bedrooms']);
+      $bathrooms = secure($_POST['listing-bathrooms']);
+      $toilets = secure($_POST['listing-toilets']);
+      $garage_spaces = secure($_POST['listing-garage-spaces']);
+      $size = secure($_POST['listing-size']);
+      $year = secure($_POST['listing-year']);
+      $construction = formalize_string($_POST['listing-construction']);
+      $condition = formalize_string($_POST['listing-condition']);
+      $insulation = formalize_string($_POST['listing-insulation']);
+      $image = secure($_FILES['listing-image']);
 
       if (empty($insulation)){ //Check if insulation blank
         $insulation = "None";
@@ -80,13 +80,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
       //Listing
-      $title = $_POST['listing-title'];
-      $description = $_POST['listing-description'];
-      $price = $_POST['listing-price'];
+      $title = formalize_string($_POST['listing-title']);
+      $description = secure($_POST['listing-description']);
+      $price = secure($_POST['listing-price']);
       //Most recent property to be added
       $property = $PID;
-      $agent = $_POST['listing-agent'];
-      $auction_date = $_POST['listing-auction-date'];
+      $agent = secure($_POST['listing-agent']);
+      $auction_date = secure($_POST['listing-auction-date']);
 
       $listing_query = " INSERT INTO tbl_listings(
                             LID, Title,

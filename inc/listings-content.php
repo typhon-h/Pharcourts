@@ -13,11 +13,11 @@
 
     //Search
     if(isset($_GET['search-submit'])){
-      $search_field = $_GET['search-bar'];
+      $search_field = secure($_GET['search-bar']);
 
-      $price_range = [$_GET['min-price'],$_GET['max-price']];
-      $bedrooms_range = [$_GET['min-bedrooms'],$_GET['max-bedrooms']];
-      $bathrooms_range = [$_GET['min-bathrooms'],$_GET['max-bathrooms']];
+      $price_range = [secure($_GET['min-price']),secure($_GET['max-price'])];
+      $bedrooms_range = [secure($_GET['min-bedrooms']),secure($_GET['max-bedrooms'])];
+      $bathrooms_range = [secure($_GET['min-bathrooms']),secure($_GET['max-bathrooms'])];
 
       //As no wildcard for int eg. BETWEEN % and 5 if statements are required to
       //determine greater than, less than, or between
@@ -77,8 +77,8 @@
 
     //Sort
     if(isset($_GET['sort-submit'])){
-      $sort_field = $_GET['sort_field']; //Get sort information
-      $sort_direction = $_GET['sort_direction'];
+      $sort_field = secure($_GET['sort_field']); //Get sort information
+      $sort_direction = secure($_GET['sort_direction']);
 
       //Add to query
       $listings_query .= "ORDER BY {$sort_field} {$sort_direction} ";

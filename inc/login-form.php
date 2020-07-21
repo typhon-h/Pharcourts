@@ -3,8 +3,8 @@
   $login_error_message = ""; //Blank by default
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $username = $_POST['login-user'];
-    $password = $_POST['login-pass'];
+    $username = secure($_POST['login-user']);
+    $password = secure($_POST['login-pass']);
 
     $user = get_from_table('tbl_users',"tbl_users.Username = '{$username}'")[0];
     if($user != false && $password == $user['Password']){ //User+Password Valid

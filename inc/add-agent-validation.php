@@ -2,14 +2,14 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     while(true) { //Doesn't actually loop just used for compatiability with break
       //Property
-      $fname = $_POST['agent-fname'];
-      $sname = $_POST['agent-sname'];
-      $qualification = $_POST['agent-qualification'];
-      $mobileph = $_POST['agent-mobileph'];
-      $workph = $_POST['agent-workph'];
-      $email = $_POST['agent-email'];
-      $bio = $_POST['agent-bio'];
-      $image = $_FILES['agent-image'];
+      $fname = formalize_string($_POST['agent-fname']);
+      $sname = formalize_string($_POST['agent-sname']);
+      $qualification = formalize_string($_POST['agent-qualification']);
+      $mobileph = secure($_POST['agent-mobileph']);
+      $workph = secure($_POST['agent-workph']);
+      $email = secure($_POST['agent-email']);
+      $bio = secure($_POST['agent-bio']);
+      $image = secure($_FILES['agent-image']);
 
       $agent_query = "INSERT INTO tbl_agents(
                           AID, FName,

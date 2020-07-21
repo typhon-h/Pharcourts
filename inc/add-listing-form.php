@@ -65,7 +65,7 @@
       <?php
         $options = ['Poor', 'Fair', 'Good', 'Excellent', 'New'];
         foreach($options as $option){
-          echo "<option value=\"{$option}\">{$option}</option>";
+          echo "<option ".(($option == $property['PCondition'])? 'selected':NULL)." value=\"{$option}\">{$option}</option>";
         }
        ?>
     </select>

@@ -2,7 +2,7 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(isset($_POST['edit-submit'])){
-    $property = $_POST['edit-listing'];
+    $property = secure($_POST['edit-listing']);
     $query = "SELECT *
               FROM tbl_listings
               INNER JOIN tbl_properties
@@ -16,20 +16,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if(isset($_POST['listing-update'])){
     while(true) { //Doesn't actually loop just used for compatiability with break
       //Property
-      $address = $_POST['listing-address'];
-      $suburb = $_POST['listing-suburb'];
-      $bedrooms = $_POST['listing-bedrooms'];
-      $bathrooms = $_POST['listing-bathrooms'];
-      $toilets = $_POST['listing-toilets'];
-      $garage_spaces = $_POST['listing-garage-spaces'];
-      $size = $_POST['listing-size'];
-      $year = $_POST['listing-year'];
-      $construction = $_POST['listing-construction'];
-      $condition = $_POST['listing-condition'];
-      $insulation = $_POST['listing-insulation'];
-      $image = $_FILES['listing-image'];
-      $listing_state = $_POST['listing-sold'];
-      $PID = $_POST['PID'];
+      $address = secure($_POST['listing-address']);
+      $suburb = formalize_string($_POST['listing-suburb']);
+      $bedrooms = secure($_POST['listing-bedrooms']);
+      $bathrooms = secure($_POST['listing-bathrooms']);
+      $toilets = secure($_POST['listing-toilets']);
+      $garage_spaces = secure($_POST['listing-garage-spaces']);
+      $size = secure($_POST['listing-size']);
+      $year = secure($_POST['listing-year']);
+      $construction = formalize_string($_POST['listing-construction']);
+      $condition = formalize_string($_POST['listing-condition']);
+      $insulation = formalize_string($_POST['listing-insulation']);
+      $image = secure($_FILES['listing-image']);
+      $listing_state = secure($_POST['listing-sold']);
+      $PID = secure($_POST['PID']);
       if (empty($insulation)){ //Check if insulation blank
         $insulation = "None";
       }
@@ -50,12 +50,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                           Insulation = '{$insulation}'
                        WHERE PID = {$PID};";
       //Listing
-      $title = $_POST['listing-title'];
-      $description = $_POST['listing-description'];
-      $price = $_POST['listing-price'];
-      $agent = $_POST['listing-agent'];
-      $auction_date = $_POST['listing-auction-date'];
-      $LID = $_POST['LID'];
+      $title = formalize_string($_POST['listing-title']);
+      $description = secure($_POST['listing-description']);
+      $price = secure($_POST['listing-price']);
+      $agent = secure($_POST['listing-agent']);
+      $auction_date = secure($_POST['listing-auction-date']);
+      $LID = secure($_POST['LID']);
 
       $update_query .= "UPDATE tbl_listings
                         SET
