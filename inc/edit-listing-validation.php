@@ -80,10 +80,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         header("Location: ./listing-profile.php?LID={$LID}");
       }
 
-      else{
-        break;
-      }
-
+      //Prevent iteration
+      break; //Break to show error as redirect did not work
     }
 
     //Display Error if loop broken
@@ -96,15 +94,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(isset($_POST['listing-delete'])){
     $LID = $_POST['LID'];
-    $PID = $_POST['PID'];
 
     $delete_query = "DELETE FROM tbl_listings
-                     WHERE LID = {$LID};
-                     DELETE FROM tbl_properties
-                     WHERE PID = {$PID};";
-    $image_location = "./media/properties/{$PID}.png";
+                     WHERE LID = {$LID};";
 
-    if (unlink($image_location) && $conn -> multi_query($delete_query)){ //Image and database information is removed
+    if ($conn -> query($delete_query)){ //Database information is removed
       //Redirect to delete success page
       header('Location: ./delete-confirmation.php');
     }

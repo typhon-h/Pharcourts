@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         VALUES(
                           NULL, '{$fname}',
                           '{$sname}', '{$qualification}',
-                          '{$mobileph}', '{$workph}',
+                          '{$workph}', '{$mobileph}',
                           '{$email}', '{$bio}'
                         )";
       //Add agent
