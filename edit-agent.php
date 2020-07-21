@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+  if ($_SESSION['IsAdmin'] == false) { //If not logged in redirect home
+    header('Location: ./index.php');
+  }
+ ?>
 <html lang="en">
   <!-- Head content -->
   <?php include "./inc/head.php"; ?>
