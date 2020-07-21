@@ -2,7 +2,7 @@
 <form class="form column" method="post" enctype="multipart/form-data">
   <!-- Listing Fields -->
   <div class="row">
-    <input class="form-field" type="text" name="listing-title" placeholder="Title" required>
+    <input class="form-field" type="text" name="listing-title" placeholder="Title" required autofocus>
   </div>
 
   <div class="row">

@@ -1,6 +1,6 @@
 <form name="listings-search" class="search-form column" method="get" action="./listings.php"> <!-- Search Form -->
   <div class="search-items row">
-    <input name = "search-bar" type="text" placeholder="Search..." autocomplete="off"> <!-- Always visible -->
+    <input name = "search-bar" type="text" placeholder="Search..." autocomplete="off" autofocus> <!-- Always visible -->
     <input name = "search-submit" type="submit" value="Search">
   </div>
 

@@ -2,7 +2,7 @@
 <form class="form column" method="post" enctype="multipart/form-data">
   <!-- Agent Fields -->
   <div class="row">
-    <input class="form-field" type="text" name="agent-fname" placeholder="First Name..." required>
+    <input class="form-field" type="text" name="agent-fname" placeholder="First Name..." required autofocus>
 
     <input class="form-field" type="text" name="agent-sname" placeholder="Last Name..." required>
   </div>

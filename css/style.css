@@ -541,7 +541,7 @@ input[type=submit]:hover{
   border-bottom: 0.1em solid transparent;
 }
 
-.nav a:hover, .nav a:active{
+.nav a:hover, .nav a:active, .active{
   color: #3C505F;
   border-bottom: 0.1em solid #1A1B1A;
 }

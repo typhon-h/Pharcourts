@@ -32,11 +32,11 @@
    <div class="nav-items row">
      <div class="nav-buttons row">
        <?php
-         echo "<a href=\"./{$home}.php\">Home</a>";
+         echo "<a ".(($active_page == $home)? "class=\"active\"":NULL)."  href=\"./{$home}.php\">Home</a>";
 
          foreach($nav_items as $item){
            $text = format_page_name($item);
-           echo "<a href=\"./{$item}.php\">{$text}</a>";
+           echo "<a ".(($active_page == $item)? "class=\"active\"":NULL)." href=\"./{$item}.php\">{$text}</a>";
          }
         ?>
      </div>
