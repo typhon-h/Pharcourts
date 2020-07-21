@@ -11,7 +11,7 @@
        $property = get_from_table("tbl_properties","tbl_properties.PID = {$listing['Property']}")[0];
        $listing = array_merge($listing,$property);
      }
-     
+
      else{ //Redirect to listings
        header("Location: ./listings.php");
      }
@@ -28,7 +28,7 @@
 
      <div class="content column">
        <div class="property-image">
-         <img src="./media/properties/<?php echo $listing['PID'] ?>.png" alt="<?php echo $listing['Address'] ?>">
+         <img src="./media/properties/<?php echo $listing['PID'] ?>.jpg" alt="<?php echo $listing['Address'] ?>">
        </div>
 
        <div class="listing-profile-content row">

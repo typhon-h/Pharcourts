@@ -32,7 +32,7 @@
 
 
   <div class="row">
-    <label for="agent-image">Change Profile Picture: <br> Required File Type: .png | Required Aspect Ratio: 1:1</label>
+    <label for="agent-image">Change Profile Picture: <br> Required File Type: .jpg | Required Aspect Ratio: 1:1</label>
     <input type="file" name="agent-image" <?php echo ((isset($active_agent))? NULL:'disabled'); ?>>
   </div>
 

@@ -29,7 +29,7 @@
     //PHP can be used to dynamically change url
     echo "<style media=\"screen\">
             .title{
-              background-image: url('./media/"."{$active_page}-background".".png');
+              background-image: url('./media/"."{$active_page}-background".".jpg');
             }
           </style>";
    ?>

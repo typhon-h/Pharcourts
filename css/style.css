@@ -239,17 +239,17 @@ input[type=submit]:hover{
 
 
 #card-1{ /*Card heading bg image */
-  background-image: url("../media/our-mission.png");
+  background-image: url("../media/our-mission.jpg");
   background-position: top;
 }
 
 #card-2{ /*Card heading bg image */
-  background-image: url("../media/most-trusted.png");
+  background-image: url("../media/most-trusted.jpg");
   background-position: center;
 }
 
 #card-3{ /*Card heading bg image */
-  background-image: url("../media/enquire-today.png");
+  background-image: url("../media/enquire-today.jpg");
   background-position: center;
 }
 

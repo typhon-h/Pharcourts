@@ -74,7 +74,7 @@
   </div>
 
   <div class="row">
-    <label for="listing-image">Change Property Image: <br> Required File Type: .png | Required Aspect Ratio: 2:1</label>
+    <label for="listing-image">Change Property Image: <br> Required File Type: .jpg | Required Aspect Ratio: 2:1</label>
     <input type="file" name="listing-image" <?php echo ((isset($listing))? NULL:'disabled'); ?>>
   </div>
 

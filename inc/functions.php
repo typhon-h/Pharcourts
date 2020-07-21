@@ -67,7 +67,7 @@ function display_featured_property($property){
           </div>
 
           <div class=\"house-img row\">
-            <img src=\"./media/properties/{$property['PID']}.png\" alt=\"Property Image\">
+            <img src=\"./media/properties/{$property['PID']}.jpg\" alt=\"Property Image\">
           </div>
         </div>
       ";
@@ -120,7 +120,7 @@ function format_page_name(string $page_name){
 function display_agent_card($agent){
   echo "
         <div class=\"card column\">
-          <div class=\"card-head column\" style=\"background-image:url('./media/agents/{$agent['AID']}.png');\">
+          <div class=\"card-head column\" style=\"background-image:url('./media/agents/{$agent['AID']}.jpg');\">
             <h3>{$agent['FName']} {$agent['SName']}</h3>
           </div>
           <div class=\"card-body column\">
@@ -141,7 +141,7 @@ function display_agent_card($agent){
 function display_listing_card($listing){
   echo "
         <div class=\"card static-card column\">
-          <div class=\"card-head column\" style=\"background-image: url('./media/properties/{$listing['Property']}.png');\">
+          <div class=\"card-head column\" style=\"background-image: url('./media/properties/{$listing['Property']}.jpg');\">
             <h3>{$listing['Title']}</h3>
           </div>
           <div class=\"card-body column\">
@@ -216,14 +216,14 @@ function check_image($image, string $target_location, string $aspect_ratio=""){
   }
 
   //Check File size
-  if($image["size"] > 500000){
+  if($image["size"] > 500000){ //Max file size 500kb
     echo "File too large";
     return false;
   }
 
-  //Check if not png
-  if($file_type != "png"){
-    echo "File must be png format";
+  //Check if not jpg
+  if($file_type != "jpg"){
+    echo "File must be jpeg format";
     return false;
   }
 
