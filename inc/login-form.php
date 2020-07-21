@@ -7,7 +7,7 @@
     $password = secure($_POST['login-pass']);
 
     $user = get_from_table('tbl_users',"tbl_users.Username = '{$username}'")[0];
-    if($user != false && $password == $user['Password']){ //User+Password Valid
+    if($user != false && password_verify($password,$user['Password']) ){ //User+Password Valid
       $_SESSION['User'] = $user['Username']; //Define Session User
       $_SESSION['IsAdmin'] = $user['IsAdmin']; //Set Session Permissions
       header('Location: ./admin-menu.php'); //Redirect
