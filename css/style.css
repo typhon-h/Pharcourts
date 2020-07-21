@@ -369,11 +369,13 @@ input[type=submit]:hover{
   padding: 0 2rem;
 }
 
+.listings-heading{
+  margin-bottom: 3rem;
+}
 .listings-items{
   width: 100%;
   height: auto;
   flex-wrap: wrap;
-
 }
 
 .sidebar{
