@@ -74,7 +74,7 @@ function display_featured_property($property){
 }
 
 
-function format_date($date){ //Date in format YYYY-MM-DD
+function format_date(string $date){ //Date in format YYYY-MM-DD
   list($year, $month, $day) = explode('-',$date);
   $new_date = "{$day}/{$month}/{$year}"; //Convert to DD/MM/YYYY
   return $new_date; //Return reformatted date
@@ -110,7 +110,7 @@ function get_from_table($table_name,$condition=1,$sort=1,$sort_direction='ASC'){
 }
 
 
-function format_page_name($page_name){
+function format_page_name(string $page_name){
   $formatted_name = str_replace('-', ' ', $page_name); //Add Spaces
   $formatted_name = ucwords($formatted_name); //Title Case
 
@@ -190,7 +190,7 @@ function display_listing_card($listing){
 }
 
 
-function get_aspect_ratio($width,$height){
+function get_aspect_ratio(int $width,int $height){
   if($width<$height){
     $lower_number = $width;
   }
@@ -203,7 +203,7 @@ function get_aspect_ratio($width,$height){
 }
 
 
-function check_image($image, $target_location, $aspect_ratio=""){
+function check_image($image, string $target_location, string $aspect_ratio=""){
   $file_type = strtolower(pathinfo($target_location,PATHINFO_EXTENSION));
 
   $image_info = getimagesize($image['tmp_name']);
