@@ -3,7 +3,17 @@
   <form class="form" method="post">
     <select class="form-field" name="edit-listing" size="2" required>
       <?php
-        $all_properties = get_from_table('tbl_properties',1,'tbl_properties.Address');
+        $query = "SELECT *
+                  FROM tbl_properties
+                  INNER JOIN tbl_listings
+                  ON tbl_properties.PID = tbl_listings.Property";
+        $all_properties = []; //Empty Array
+        $query_result = $conn -> query($query); //Get items
+
+        while($item = $query_result-> fetch_assoc()){ //Iterate through items
+          $all_properties[] = $item; //Append to array
+        }
+
         foreach($all_properties as $property){
           echo "<option value=\"{$property['PID']}\">{$property['Address']}</option>";
         }

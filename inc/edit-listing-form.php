@@ -79,6 +79,18 @@
   </div>
 
   <div class="row">
+    <select name="listing-sold" class="form-field" required <?php echo ((isset($listing))? ">":'disabled> <option selected>Listing State</option>'); ?>
+
+      <?php
+        $options = ['1','0']; //Sold, Active
+        foreach($options as $option){
+          echo "<option ".(($option == $listing['Sold'])? 'selected':NULL)." value=\"{$option}\">".(($option == '1')? "Sold":"Active")."</option>";
+        }
+       ?>
+    </select>
+  </div>
+
+  <div class="row">
     <input class="submit" type="submit" name="listing-delete" value = "Delete" <?php echo ((isset($listing))? NULL:'disabled'); ?>>
 
     <input class="submit" type="submit" name="listing-update" value = "Update" <?php echo ((isset($listing))? NULL:'disabled'); ?>>

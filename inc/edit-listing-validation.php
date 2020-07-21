@@ -28,6 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $condition = $_POST['listing-condition'];
       $insulation = $_POST['listing-insulation'];
       $image = $_FILES['listing-image'];
+      $listing_state = $_POST['listing-sold'];
       $PID = $_POST['PID'];
       if (empty($insulation)){ //Check if insulation blank
         $insulation = "None";
@@ -62,7 +63,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                           Description = '{$description}',
                           Price = {$price},
                           Agent = {$agent},
-                          AuctionDate = '{$auction_date}'
+                          AuctionDate = '{$auction_date}',
+                          Sold = {$listing_state}
                         WHERE LID = {$LID};";
 
       //Upload new image if exists
