@@ -20,6 +20,7 @@
     </div>
 
     <div class="contact-map column">
+      <!-- Google Maps -->
       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=85%20Evans%20Street,Waimataitai,Timaru%207910+(Pharcourts)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Map</iframe>
     </div>
 

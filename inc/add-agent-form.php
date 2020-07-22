@@ -30,6 +30,7 @@
 
 
   <div class="row">
+    <!-- Image Requirements -->
     <label for="agent-image">Select a Profile Picture: <br> Required File Type: .jpg | Required Aspect Ratio: 1:1</label>
     <input type="file" name="agent-image" required>
   </div>

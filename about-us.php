@@ -12,8 +12,10 @@
     <?php include "./inc/title.php"; ?>
 
     <div class="content column">
+      <!-- Our Mission -->
       <?php include "./inc/about-mission.php"; ?>
       <hr class="solid">
+      <!-- Our Story -->
       <?php include "./inc/about-story.php"; ?>
     </div>
 

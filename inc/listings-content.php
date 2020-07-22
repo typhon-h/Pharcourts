@@ -11,62 +11,25 @@
                        ON tbl_listings.Property = tbl_properties.PID
                        WHERE tbl_listings.Sold = false ";
 
-    //Search
+    //Search - Build Search Criteria
     if(isset($_GET['search-submit'])){
+      //Get Fields
       $search_field = secure($_GET['search-bar']);
 
       $price_range = [secure($_GET['min-price']),secure($_GET['max-price'])];
       $bedrooms_range = [secure($_GET['min-bedrooms']),secure($_GET['max-bedrooms'])];
       $bathrooms_range = [secure($_GET['min-bathrooms']),secure($_GET['max-bathrooms'])];
 
-      //As no wildcard for int eg. BETWEEN % and 5 if statements are required to
-      //determine greater than, less than, or between
-
       //Set Price Criteria
-      if ($price_range[0] == '' and $price_range[1] == ''){
-        $price_criteria = '';
-      }
-      elseif ($price_range[0] == ''){ //If min is not set
-        $price_criteria = "AND tbl_listings.Price <= {$price_range[1]}";
-      }
-      elseif ($price_range[1] == ''){ //If max is not set
-        $price_criteria = "AND tbl_listings.Price >= {$price_range[0]}";
-      }
-      else{
-        $price_criteria = "AND tbl_listings.Price BETWEEN {$price_range[0]} and {$price_range[1]}";
-      }
-
+      $price_criteria = get_search_criteria($price_range,'tbl_listings.Price');
 
       //Set Bedrooms Criteria
-      if ($bedrooms_range[0] == '' and $bedrooms_range[1] == ''){
-        $bedrooms_criteria = '';
-      }
-      elseif ($bedrooms_range[0] == ''){ //If min is not set
-        $bedrooms_criteria = "AND tbl_properties.Bedrooms <= {$bedrooms_range[1]}";
-      }
-      elseif ($bedrooms_range[1] == ''){ //If max is not set
-        $bedrooms_criteria = "AND tbl_properties.Bedrooms >= {$bedrooms_range[0]}";
-      }
-      else{
-        $bedrooms_criteria = "AND tbl_properties.Bedrooms BETWEEN {$bedrooms_range[0]} and {$bedrooms_range[1]}";
-      }
-
+      $bedrooms_criteria = get_search_criteria($bedrooms_range,'tbl_properties.Bedrooms');
 
       //Set Bathrooms Criteria
-      if ($bathrooms_range[0] == '' and $bathrooms_range[1] == ''){
-        $bathrooms_criteria = '';
-      }
-      elseif ($bathrooms_range[0] == ''){ //If min is not set
-        $bathrooms_criteria = "AND tbl_properties.Bathrooms <= {$bathrooms_range[1]}";
-      }
-      elseif ($bathrooms_range[1] == ''){ //If max is not set
-        $bathrooms_criteria = "AND tbl_properties.Bathrooms >= {$bathrooms_range[0]}";
-      }
-      else{
-        $bathrooms_criteria = "AND tbl_properties.Bathrooms BETWEEN {$bathrooms_range[0]} and {$bathrooms_range[1]}";
-      }
+      $bathrooms_criteria = get_search_criteria($bathrooms_range,'tbl_properties.Bathrooms');
 
-
+      //Append search criteria to query
       $listings_query .= "AND (tbl_listings.Title LIKE '%{$search_field}%' OR
                                 tbl_properties.Address LIKE '%{$search_field}%' OR
                                 tbl_properties.Suburb LIKE '%{$search_field}%')
@@ -75,9 +38,11 @@
                                 {$bathrooms_criteria} ";
     }
 
-    //Sort
+
+    //Sort - Build Sort Criteria
     if(isset($_GET['sort-submit'])){
-      $sort_field = secure($_GET['sort_field']); //Get sort information
+      //Get Fields
+      $sort_field = secure($_GET['sort_field']);
       $sort_direction = secure($_GET['sort_direction']);
 
       //Add to query
@@ -86,17 +51,21 @@
 
     //Run Query
     $result = $conn -> query($listings_query);
-    $listings = [];
+    $listings = []; //Empty Array
     while($listing = $result -> fetch_assoc()){
+      //Get listing as assoc array and add to $listings
       $listings[] = $listing;
     }
 
-    if(empty($listings)){
+    if(empty($listings)){ //If No Results
       echo 'No Results Matching ... Check your search critera and try again.';
     }
-    //Display Listings
-    foreach($listings as $listing){
-      display_listing_card($listing); //Display Listings
+
+    else{
+      //Display Listings
+      foreach($listings as $listing){
+        display_listing_card($listing); //Display Listings
+      }
     }
      ?>
   </div>

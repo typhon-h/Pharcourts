@@ -1,52 +1,50 @@
 <?php
 
-  switch ($active_page) { //Change Title based on page
-    case 'index':
-      $title_text = "Home is where the heart is"; //Slogan
+  switch ($active_page) { //Special Title Conditions
+    case 'index': //Slogan
+      $title_text = "Home is where the heart is";
       break;
 
-    case 'agent-profile':
+    case 'agent-profile': //Agent Name
       $title_text = "{$agent['FName']} {$agent['SName']}";
       break;
 
-    case 'listing-profile':
+    case 'listing-profile': //Property Address
       $title_text = "{$listing['Address']}";
       break;
 
-    case 'admin-menu':
+    case 'admin-menu': //Welcome Message
       $title_text = "Welcome Back, {$_SESSION['User']}.";
       break;
 
-    default: //Main text is page name
+    default: //Default to name of page
       $title_text = format_page_name($active_page);
       break;
-  }
+  } //End Switch
  ?>
 
  <div class="title column">
   <?php
-    //Style for background image here so
-    //PHP can be used to dynamically change url
+    //Style for background image here
+    //PHP can be used to dynamically change CSS url for bg
     echo "<style media=\"screen\">
             .title{
               background-image: url('./media/"."{$active_page}-background".".jpg');
             }
-          </style>";
+          </style>"; //Set BG Image
    ?>
 
    <h1><?php echo $title_text; ?></h1> <!-- Title Text -->
 
-
   <!-- Additional Title Content -->
   <?php
-
-    switch ($active_page) {
-      case 'index':
-      case 'listings':
+    switch ($active_page) { //Special Conditions
+      case 'index': //Index Page or Listings Page
+      case 'listings': //Search Form
         include './inc/listings-search-form.php';
         break;
 
-      case 'agent-profile':
+      case 'agent-profile': //Agent Contact Details
         echo "
             <div class=\"contact-details row\">
               <p>
@@ -64,10 +62,9 @@
             </div>";
         break;
 
-      case 'listing-profile':
+      case 'listing-profile': //Listing Suburb
         echo "<h2>{$listing['Suburb']}</h2>";
         break;
     }
-
    ?>
  </div>

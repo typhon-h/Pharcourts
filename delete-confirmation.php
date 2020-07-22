@@ -17,6 +17,7 @@
     <!-- Title Section -->
     <?php include "./inc/title.php"; ?>
 
+    <!-- Deletion Successful Message -->
     <div class="content row">
       <h1>Item has been successfully deleted</h1>
     </div>

@@ -1,11 +1,13 @@
-<form name="listings-search" class="search-form column" method="get" action="./listings.php"> <!-- Search Form -->
+<!-- Search Form -->
+<form name="listings-search" class="search-form column" method="get" action="./listings.php">
+  <!-- Always visible -->
   <div class="search-items row">
-    <input name = "search-bar" type="text" placeholder="Search..." autocomplete="off" autofocus> <!-- Always visible -->
+    <input name = "search-bar" type="text" placeholder="Search..." autocomplete="off" autofocus>
     <input name = "search-submit" type="submit" value="Search">
   </div>
 
   <!-- Toggle for additional dropdown options -->
-  <label class="option-toggle"for="option-toggle">More Options &#9650; &#9660;</label> <!-- Show arrow based on checkbox state -->
+  <label class="option-toggle"for="option-toggle">More Options &#9650; &#9660;</label> <!-- Change arrow direciton based on toggle state (javascript necessary) -->
   <input type="checkbox" id="option-toggle" name="option-toggle" value="" hidden>
 
 
@@ -15,7 +17,7 @@
       $options = array("Price", "Bedrooms", "Bathrooms");
 
       foreach($options as $option){
-        //Echo statement is broken as it needs to include options for select fields
+        //Echo statement is broken as requires include statement to import options for select fields
         echo "
               <div class=\"additional-option column\">
                 <label>{$option}</label>

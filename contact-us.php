@@ -12,8 +12,10 @@
     <?php include "./inc/title.php"; ?>
 
     <div class="content row">
+      <!-- Direct Contact Form -->
       <?php include "./inc/contact-form.php"; ?>
 
+      <!-- Contact Information -->
       <?php include "./inc/contact-info.php"; ?>
     </div>
 

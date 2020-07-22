@@ -1,13 +1,12 @@
 <?php
 $query = "SELECT DISTINCT Property
-                          FROM tbl_listings"; //Get unlinked properties
+                          FROM tbl_listings"; //Get linked properties
 $result = $conn -> query($query);
 $associated_properties = "";
 while ($property = $result -> fetch_row()){ //Add to string 'array'
   $associated_properties .= "{$property[0]},";
 }
 $associated_properties = rtrim($associated_properties,',') //Remove tailing comma
-
 ?>
 
 
@@ -16,7 +15,7 @@ $associated_properties = rtrim($associated_properties,',') //Remove tailing comm
   <form class="form" method="post">
     <select class="form-field" name="add-property" size="10" required>
       <?php
-        //Get all unassociated properties
+        //Get all unlinked properties
         $query = "SELECT *
                   FROM tbl_properties
                   WHERE tbl_properties.PID not in ({$associated_properties})";
@@ -26,8 +25,8 @@ $associated_properties = rtrim($associated_properties,',') //Remove tailing comm
         while($item = $query_result-> fetch_assoc()){ //Iterate through items
           $all_properties[] = $item; //Append to array
         }
-        //Add properties as options
-        foreach($all_properties as $p){
+
+        foreach($all_properties as $p){ //Display Unlinked Properties as Options
           echo "<option value=\"{$p['PID']}\">{$p['Address']}</option>";
         }
       ?>

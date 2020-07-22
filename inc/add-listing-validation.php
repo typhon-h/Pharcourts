@@ -2,15 +2,19 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
-  if(isset($_POST['property-submit'])){
+  if(isset($_POST['property-submit'])){ //Property Load
+    //Get Fields
     $PID = secure($_POST['add-property']);
+    //Define property ($property populates the form if set)
     $property = get_from_table('tbl_properties',"tbl_properties.PID = {$PID}")[0];
   }
 
+
   if(isset($_POST['listing-submit'])){
-    $remove_query = "";
-    while(true) { //Doesn't actually loop just used for compatiability with break
-      //Property
+    $remove_query = ""; //Query to remove added records if part fails
+    //While loop does not iterate. Is used so that I can use break to exit statement if error occurs
+    while(true) {
+      //Property Related Fields
       $PID = secure($_POST['PID']);
       $address = formalize_string($_POST['listing-address']);
       $suburb = formalize_string($_POST['listing-suburb']);
@@ -24,12 +28,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $condition = formalize_string($_POST['listing-condition']);
       $insulation = formalize_string($_POST['listing-insulation']);
       $image = $_FILES['listing-image'];
-
       if (empty($insulation)){ //Check if insulation blank
         $insulation = "None";
       }
 
-      if(isset($PID)){ //If existing property used update
+      //If existing property used update instead of append
+      if(isset($PID)){
         $property_query = "UPDATE tbl_properties
                          SET
                             Address = '{$address}',
@@ -45,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             Insulation = '{$insulation}'
                          WHERE PID = {$PID};";
       }
-      else{ //Else add new property
+      else{ //New Property
         $property_query = "INSERT INTO tbl_properties(
                             PID, Address,
                             Suburb, Bedrooms,
@@ -64,22 +68,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                           )";
       }
 
-      //Add property
+      //Add new property/Update existing property
       if(!$conn -> query($property_query)){ //Run query and if fails
         echo $conn -> error;
-        break;
+        break; //Error
       }
 
-      //Get PID of most recent property
+      //Get PID of new property
       if(!isset($PID)){ //If existing property not used get new PID
         $PID = get_from_table('tbl_properties',1,'tbl_properties.PID','DESC')[0]['PID'];
-        //Define query to remove property in case listing or image fails
+        //Append to delete query to remove new property in case listing or image fails
         $remove_query = "DELETE FROM tbl_properties
                             WHERE tbl_properties.PID = {$PID};";
       }
 
 
-      //Listing
+      //Listing Fields
       $title = formalize_string($_POST['listing-title']);
       $description = secure($_POST['listing-description']);
       $price = secure($_POST['listing-price']);
@@ -88,6 +92,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $agent = secure($_POST['listing-agent']);
       $auction_date = secure($_POST['listing-auction-date']);
 
+      //Listings Append Query
       $listing_query = " INSERT INTO tbl_listings(
                             LID, Title,
                             Description, Price,
@@ -102,14 +107,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                           )";
       //Add listing
       if(!$conn -> query($listing_query)){ //Run query and if fails
-        //Remove property so there isn't unassigned property
         echo $conn -> error;
+        //Remove property as only allow it to stay if whole operation is valid
         $conn -> query($remove_query);
-        break; //Show error
+        break; //Error
       }
 
-      if(!isset($_POST['PID']) ||  $image['error'] != 4){ //New property is being added or image has been uploaded
-        //Get LID of most recent property
+      //If new property or image has been uploaded
+      if(!isset($_POST['PID']) ||  $image['error'] != 4){
+        //Add listings to remove query
+        //Get LID of most recent listing
         $LID = get_from_table('tbl_listings',1,'tbl_listings.LID','DESC')[0]['LID'];
         //Add listings to start of string as listing must be removed before property due to relationship in PHPMyAdmin
         $remove_query = "DELETE FROM tbl_listings
@@ -118,19 +125,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $target_location = "./media/properties/{$PID}.png";
         $image_valid = check_image($image,$target_location,"2:1"); //Check image is valid
 
+        //Attempt to upload image if valid
         if ($image_valid && move_uploaded_file($image["tmp_name"], $target_location)) { //If image can be uploaded and is uploaded successfully
-          //Redirect to added listing page (ending while loop)
-          header("Location: ./listing-profile.php?LID={$LID}");
+          header("Location: ./listing-profile.php?LID={$LID}"); //Redirect
         }
         else{
           //Remove property and listing
           $conn -> multi_query($remove_query);
-          break;
+          break; //Error
         }
       }
 
-      else{
-        header("Location: ./listing-profile.php?LID={$LID}");
+      else{ //If no image for existing property
+        header("Location: ./listing-profile.php?LID={$LID}"); //Redirect
       }
 
     }

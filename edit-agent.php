@@ -18,13 +18,16 @@
     <?php include "./inc/title.php"; ?>
 
     <div class="content row">
+      <!-- Sidebar for choose agent to edit -->
       <?php include "./inc/edit-agent-sidebar.php"; ?>
 
       <div class="column">
+        <!-- Form Validation -->
         <span class="error">
           <?php include "./inc/edit-agent-validation.php"; ?>
         </span>
 
+        <!-- Edit Agent Form -->
         <?php include "./inc/edit-agent-form.php"; ?>
       </div>
     </div>

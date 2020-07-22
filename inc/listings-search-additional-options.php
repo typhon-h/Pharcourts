@@ -1,4 +1,4 @@
-<option value="" selected>Any</option>
+<option value="" selected>Any</option> <!-- Default -->
 <?php
   $values_count = 10; //Number of Options
   $increment = 1; //Increment of each option (starting at 1)

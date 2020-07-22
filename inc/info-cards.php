@@ -1,5 +1,5 @@
 <div class="info-cards row">
-  <div class="card column">
+  <div class="card column"> <!-- Card -->
     <div class="card-head column" id="card-1">
       <h3>Our Mission</h3>
     </div>
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="card column">
+  <div class="card column"> <!-- Card -->
     <div class="card-head column" id="card-2">
       <h3>Most Trusted</h3>
     </div>
@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <div class="card column">
+  <div class="card column"> <!-- Card -->
     <div class="card-head column" id="card-3">
       <h3>Enquire Today</h3>
     </div>

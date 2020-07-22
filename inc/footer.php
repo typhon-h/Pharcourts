@@ -1,5 +1,6 @@
 <div class="footer column">
-  <a href="#body"><img src="./media/return-to-top.png" alt="Return to Top"></a> <!-- Up arrow ^ of some kind -->
+  <!-- Arrow Returns to Top-->
+  <a href="#body"><img src="./media/return-to-top.png" alt="Return to Top"></a>
 
   <div class="footer-content row">
     <div class="footer-section column">
@@ -42,10 +43,10 @@
           </p>
           <i>- A Professional Reviewer</i>
         </div>
-
     </div>
 </div>
-    <!-- Quality of Life/Legal -->
+
+    <!-- Quality of Life/Legal Section-->
     <div class="footer-section column legal-information">
       <h5><a href="#">Privacy Policy</a></h5>
       <h5><a href="#">Terms and Conditions</a></h5>

@@ -11,6 +11,7 @@
     <!-- Title Section -->
     <?php include "./inc/title.php"; ?>
 
+    <!-- Display All Agents -->
     <div class="content row">
       <?php include "./inc/agent-cards.php"; ?>
     </div>

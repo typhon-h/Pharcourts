@@ -84,7 +84,7 @@ input[type=submit]:hover{
   -ms-align-items: center;
   align-items: center;
   width: 90%;
-  margin: 0 5rem; /*Top/Bottom Right/Left*/
+  margin: 0 5rem;
 }
 
 .nav-buttons{
@@ -105,7 +105,7 @@ input[type=submit]:hover{
   padding: 2rem;
   padding-top: 12rem;
   padding-bottom: 3rem;
-  /* background-image defined in title.php */
+  /* background-image defined in ../inc/title.php */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -118,7 +118,7 @@ input[type=submit]:hover{
   padding-left: 1.5rem;
 }
 /* _________________________________________________________________________ */
-
+/* Content - General */
 .content{
   justify-content: space-around;
   padding: 2rem;
@@ -153,6 +153,7 @@ input[type=submit]:hover{
 /* Additional styling for slideshow is
    with Testimonials section in Footer */
 
+/* Overlay */
 .house-info{
   justify-content: space-between;
   -ms-align-items: center;
@@ -204,7 +205,7 @@ input[type=submit]:hover{
 }
 
 /* _________________________________________________________________________ */
-/* Info Cards (Index) */
+/* Cards (Index) */
 
 .info-cards{
   -ms-align-items: center;
@@ -296,7 +297,6 @@ input[type=submit]:hover{
   height: 60%;
   min-width: 70%;
   justify-content: space-between;
-  /* background-color: #fff; */
 }
 
 /* _________________________________________________________________________ */
@@ -308,8 +308,7 @@ input[type=submit]:hover{
   padding-top:0;
   -ms-align-items: center;
   align-items: center;
-
-  border-left: 0.2em solid #1A1B1A;
+  border-left: 0.2em solid #1A1B1A; /* Content divider */
 }
 
 .contact-info .row{
@@ -321,6 +320,7 @@ input[type=submit]:hover{
 .contact-desc{
   width: 30%;
 }
+
 .contact-map{
   width: 65%;
   height: 100%;
@@ -335,6 +335,7 @@ input[type=submit]:hover{
   -ms-align-items: center;
   align-items: center;
 }
+
 .about-section{
   height: auto;
   width: 70%;
@@ -372,6 +373,7 @@ input[type=submit]:hover{
 .listings-heading{
   margin-bottom: 3rem;
 }
+
 .listings-items{
   width: 100%;
   height: auto;
@@ -381,7 +383,7 @@ input[type=submit]:hover{
 .sidebar{
   min-width: 7rem;
   width: 15%;
-  margin-bottom: auto; /*used instead of jc:fs */
+  margin-bottom: auto; /*used instead of justify-content:flex-start */
   text-align: center;
   justify-content: flex-start;
   overflow: hidden;
@@ -422,6 +424,7 @@ input[type=submit]:hover{
 .listing-important-info ul{
   margin-top: 0;
 }
+
 .listing-important-info li{
   margin:2em;
 }
@@ -441,7 +444,7 @@ input[type=submit]:hover{
   height: 20rem;
 }
 
-.footer a{
+.footer a{ /* Images */
   width:4%;
   top:0;
 }
@@ -485,6 +488,8 @@ input[type=submit]:hover{
   width: 100%;
 }
 
+/* Testimonials */
+/* Temporary Section until javascript added */
 .testimonials,.featured-slideshow{
   --count: 3; /*CSS Variable - Amount of boxes in slideshow */
   position: relative;
@@ -495,14 +500,14 @@ input[type=submit]:hover{
 .slider-testimonial,.slider-featured{
   position: absolute;
   height: 100%;
-  /*Slide is 100% wide. Fit all w no overflow. 3 default value*/
+  /*Slide is 100% wide. Fit all with no overflow. 3 default value*/
   width: calc(100%*var(--count,3));
 }
 
 .testimonial, .featured-property{
   justify-content: space-around;
   float: left;
-  width: calc(100%/var(--count,3)); /*Visible area - only 1 box*/
+  width: calc(100%/var(--count,3)); /*Visible area - only 1 box or 1/3 of space */
   height: 100%;
 }
 
@@ -567,7 +572,7 @@ input[type=submit]:hover{
   text-shadow: 0.1em 0.1em 8px #1A1B1A;
 }
 /* _________________________________________________________________________ */
-
+/* Content - General */
 .content{
   background-image: -webkit-linear-gradient(#A26444, #B7B29D);
   background-image: -o-linear-gradient(#A26444, #B7B29D);
@@ -590,7 +595,7 @@ input[type=submit]:hover{
 }
 
 /* _________________________________________________________________________ */
-/* Info Cards (Index) */
+/* Cards */
 
 .card{
   background-color: #1A1B1A;
@@ -625,7 +630,6 @@ input[type=submit]:hover{
 }
 /* _________________________________________________________________________ */
 /* Footer */
-
 .footer{
   background-color: #A26444;
 }
@@ -680,7 +684,7 @@ font-family: Verdana, sans-serif;
 
 .additional-options{
   font-size: 1.5em;
-  font-weight: 550;
+  font-weight: 600;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
 }
 
@@ -706,6 +710,7 @@ font-family: Verdana, sans-serif;
   font-size: 1.2em;
   font-weight: 600;
 }
+
 .house-info a{
   font-size:1.2em;
 }
@@ -715,7 +720,7 @@ font-family: Verdana, sans-serif;
 }
 
 /* _________________________________________________________________________ */
-/* Info Cards (Index) */
+/* Cards */
 .card-head{
   font-size: 2.25em;
   text-shadow: 0.1em 0.1em 2px #1A1B1A;
@@ -787,7 +792,7 @@ font-family: Verdana, sans-serif;
 
 /* _________________________________________________________________________ */
 /* Keyframe Animation Sequences */
-@keyframes scroll{ /*Slideshow with 3 items */
+@keyframes scroll{ /*Scroll through slideshow with 3 items */
   0%{
     left:0;
   }
@@ -879,7 +884,7 @@ font-family: Verdana, sans-serif;
 
 
 /* _________________________________________________________________________ */
-/* Multiple Forms*/
+/* Search and Subscribe */
 .search-items, .subscribe-form{
   justify-content: center;
   height:3em;
@@ -911,7 +916,11 @@ font-family: Verdana, sans-serif;
   border-bottom-left-radius: 0;
   background-color: #869D8A;
 }
-
+/* _________________________________________________________________________ */
+/* Subscribe Form */
+.subscribe-form input{
+  font-size: 0.6em;
+}
 /* _________________________________________________________________________ */
 /* Search Form */
 .search-form{
@@ -923,7 +932,7 @@ font-family: Verdana, sans-serif;
 }
 
 .search-items input[type=submit]{
-  font-weight: 550;
+  font-weight: 600;
 }
 
 .additional-options{
@@ -1019,16 +1028,19 @@ select.form-field{
   width: 40%;
   justify-content: space-between;
 }
+
 .login-form input:not([type=submit]){ /*Username and Password Fields*/
   margin-bottom: 0.5em;
   padding: 0.5em 0.5em;
   font-size: 2em;
 }
+
 .login-form input[type=submit]{ /*Submit Button*/
   padding:0.25em;
   margin-top: 1em;
   font-size: 2em
 }
+
 .error{
   font-size: 1em;
   height: auto;
@@ -1048,11 +1060,6 @@ select[name*="edit"]{
 select[name*="edit"] option{
   margin: 0.25em 0;
 }
-
 /* _________________________________________________________________________ */
-/* Subscribe Form */
-.subscribe-form input{
-  font-size: 0.6em;
-}
 
 /* End of Document */

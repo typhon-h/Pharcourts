@@ -1,19 +1,22 @@
 @media only screen and (max-width: 960px){
-  :root{
+  :root{ /* Root font size */
     font-size:20px;
   }
+  /* Display Down Page */
   .nav,.nav-items,.nav-buttons,.content,.info-cards,.footer-content, .listing-profile-content, .contact-details, .about-section{
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
   }
 
+  /* Center Content */
   .nav, .nav-items, .nav-buttons,.title,.content,.footer-content,.footer-section,.about-section{
     -ms-align-items: center;
     align-items: center;
     text-align: center;
   }
 /* _________________________________________________________________________ */
+/* Navigation */
   .nav{
     padding:0;
     padding-bottom:1em;
@@ -27,6 +30,7 @@
     margin-bottom: 1em;
   }
 /* _________________________________________________________________________ */
+/* Title Section */
   .title{
     padding-top: 4rem;
     background-attachment: fixed;
@@ -36,6 +40,7 @@
     width: 90%;
   }
 /* _________________________________________________________________________ */
+/* Content Section */
   .featured-slideshow{
     width: 100%;
     height: 23rem;
@@ -56,6 +61,7 @@
     transform: none;
   }
   /* _________________________________________________________________________ */
+  /* Footer Section */
   .footer{
     height: auto;
   }
@@ -70,6 +76,7 @@
     margin-top:2em;
   }
 /* _________________________________________________________________________ */
+/* Listing and Agent Profiles */
   .sidebar{
     width: 90%;
     margin-bottom:1em;
@@ -90,6 +97,7 @@
     border-top: 0.2em solid #1A1B1A;
   }
 /* _________________________________________________________________________ */
+/* About Us Page */
   .about-info img{
     width: 70%;
   }

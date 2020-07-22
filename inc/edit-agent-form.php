@@ -1,6 +1,8 @@
-
 <form class="form column" method="post" enctype="multipart/form-data">
+  <!-- Hidden field to pass ID of Agent to Validation -->
   <input type="text" name="AID" value="<?php echo ((isset($active_agent))? $active_agent['AID']:NULL) ?>" hidden>
+
+<!-- Inline if - all fields populate themselves if $active_agent is set from the sidebar, else they are inactive -->
 
   <!-- Agent Fields -->
   <div class="row">
@@ -32,6 +34,7 @@
 
 
   <div class="row">
+    <!-- Image Requirements -->
     <label for="agent-image">Change Profile Picture: <br> Required File Type: .jpg | Required Aspect Ratio: 1:1</label>
     <input type="file" name="agent-image" <?php echo ((isset($active_agent))? NULL:'disabled'); ?>>
   </div>

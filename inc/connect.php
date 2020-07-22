@@ -15,9 +15,9 @@
 
   //Initialize Login Session
   session_start(); //Session is global associative array
-  if(!isset($_SESSION['IsAdmin'])){
-    $_SESSION['User'] = NULL;
-    $_SESSION['IsAdmin'] = false;
+  if(!isset($_SESSION['IsAdmin'])){ //If not logged in
+    $_SESSION['User'] = NULL; //No User
+    $_SESSION['IsAdmin'] = false; //Deny admin permission
   }
 
  ?>

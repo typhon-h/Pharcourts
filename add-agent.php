@@ -16,12 +16,12 @@
 
     <!-- Title Section -->
     <?php include "./inc/title.php"; ?>
-
+    <!-- Form Validation -->
     <div class="content column">
       <span class="error">
         <?php include "./inc/add-agent-validation.php"; ?>
       </span>
-
+      <!-- Add Agent Form -->
       <?php include "./inc/add-agent-form.php"; ?>
     </div>
 

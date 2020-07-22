@@ -18,13 +18,16 @@
     <?php include "./inc/title.php"; ?>
 
     <div class="content row">
+      <!-- Sidebar for choose listing to edit -->
       <?php include "./inc/edit-listing-sidebar.php"; ?>
 
       <div class="column">
+        <!-- Form Validation -->
         <span class="error">
           <?php include "./inc/edit-listing-validation.php"; ?>
         </span>
 
+        <!-- Edit Listing Form -->
         <?php include "./inc/edit-listing-form.php"; ?>
       </div>
     </div>

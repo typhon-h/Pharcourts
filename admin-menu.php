@@ -14,6 +14,7 @@
     <?php include "./inc/nav.php"; ?>
 
     <!-- Title Section -->
+    <!-- Displays Welcome Message -->
     <?php include "./inc/title.php"; ?>
 
     <!-- Footer -->
