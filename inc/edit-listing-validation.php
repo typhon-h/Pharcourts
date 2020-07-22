@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $construction = formalize_string($_POST['listing-construction']);
       $condition = formalize_string($_POST['listing-condition']);
       $insulation = formalize_string($_POST['listing-insulation']);
-      $image = secure($_FILES['listing-image']);
+      $image = $_FILES['listing-image'];
       $listing_state = secure($_POST['listing-sold']);
       $PID = secure($_POST['PID']);
       if (empty($insulation)){ //Check if insulation blank

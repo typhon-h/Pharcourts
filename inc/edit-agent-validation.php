@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $workph = secure($_POST['agent-workph']);
       $email = secure($_POST['agent-email']);
       $bio = secure($_POST['agent-bio']);
-      $image = secure($_FILES['agent-image']);
+      $image = $_FILES['agent-image'];
       $AID = secure($_POST['AID']);
 
       $update_query = "UPDATE tbl_agents
