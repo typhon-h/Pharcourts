@@ -877,22 +877,33 @@ font-family: Verdana, sans-serif;
 /* Multiple Forms*/
 .search-items, .subscribe-form{
   justify-content: center;
+  height:3em;
   width: 100%;
-  padding:auto;
+}
+
+.search-items input, .subscribe-form input{
+  border-width:0;
+  font-size:1.5em;
 }
 
 .search-items input[type=text], .subscribe-form input[type=text]{
   width: 74%;
-  height: 3rem;
-  padding-left: 1rem;
+  height: inherit;
+  padding-left: 1.5rem;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .search-items input[type=submit], .subscribe-form input[type=submit]{
   width: 25%;
+  height:inherit;
+  border-color: transparent;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   background-color: #869D8A;
 }
 
@@ -903,7 +914,7 @@ font-family: Verdana, sans-serif;
 }
 
 .search-items input{
-  font-size: 1.5em;
+  height: 100%;
 }
 
 .search-items input[type=submit]{
@@ -927,13 +938,10 @@ font-family: Verdana, sans-serif;
 }
 
 .additional-selects{
-  width: 100%;
   justify-content: space-between;
 }
 
 .additional-selects select{
-  width: 25%;
-  height: 2rem;
   margin-right:1em;
   background-color: transparent;
   border: none;

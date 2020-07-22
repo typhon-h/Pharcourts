@@ -1,0 +1,91 @@
+@media only screen and (max-width: 960px){
+  :root{
+    font-size:20px;
+  }
+  .nav,.nav-items,.nav-buttons,.content,.info-cards,.footer-content, .listing-profile-content, .contact-details, .about-section{
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .nav, .nav-items, .nav-buttons,.title,.content,.footer-content,.footer-section,.about-section{
+    -ms-align-items: center;
+    align-items: center;
+    text-align: center;
+  }
+/* _________________________________________________________________________ */
+  .nav{
+    padding:0;
+    padding-bottom:1em;
+    position: relative;
+    height: auto;
+    font-size: 1.5em;
+  }
+
+  #logo-link{
+    width: 70%;
+    margin-bottom: 1em;
+  }
+/* _________________________________________________________________________ */
+  .title{
+    padding-top: 4rem;
+    background-attachment: fixed;
+  }
+
+  .search-form{
+    width: 90%;
+  }
+/* _________________________________________________________________________ */
+  .featured-slideshow{
+    width: 100%;
+  }
+
+  .house-info{
+    width: 20%;
+  }
+
+  .card{
+    width: 90%;
+    height: 40rem;
+  }
+
+  .card:hover{
+    transform: none;
+  }
+  /* _________________________________________________________________________ */
+  .footer{
+    height: auto;
+  }
+
+  .footer a{
+    width: 20%;
+  }
+
+  .footer-section{
+    width: 90%;
+    min-height: 20rem;
+    margin-top:2em;
+  }
+/* _________________________________________________________________________ */
+.sidebar{
+  width: 90%;
+  margin-bottom:1em;
+}
+
+.listing-profile-content{
+  width: 90%;
+}
+
+.listing-profile-content > *{
+  width: 100%;
+}
+
+.contact-info{
+  width: 90%;
+  margin-top:1em;
+  border-left: none;
+  border-top: 0.2em solid #1A1B1A;
+}
+/* _________________________________________________________________________ */
+
+}
