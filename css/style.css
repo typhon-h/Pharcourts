@@ -744,6 +744,10 @@ font-family: Verdana, sans-serif;
   text-decoration: underline;
 }
 /* _________________________________________________________________________ */
+.about-section{
+  font-size:1.2em;
+}
+/* _________________________________________________________________________ */
 /* Footer */
 .newsletter{
   font-size: 1.5em;
@@ -754,12 +758,13 @@ font-family: Verdana, sans-serif;
 }
 
 .testimonial p{
-  font-family: fantasy;
+  font-style: italic;
   font-size:1.5em;
 }
 
 .testimonial i{
   font-size: 1em;
+  font-weight: 600;
 }
 
 .legal-information a:hover, .legal-information a:active{
