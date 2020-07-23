@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //Display Error if loop broken
     echo "<br>";
     echo "An error has occured updating this agent. Some fields may not have been updated correctly.";
-    echo echo $conn -> error;
+    echo $conn -> error;
   }
 
 

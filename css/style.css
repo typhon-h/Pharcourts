@@ -842,17 +842,17 @@ font-family: Verdana, sans-serif;
   transform: scale(1.1,1.1); /*Zoom slightly on hover*/
 }
 
-.card:hover > .card-head, .static-card > .card-head{ /*Collapse Head*/
+.card:hover > .card-head,.card:active > .card-head,.card:focus > .card-head, .static-card > .card-head{ /*Collapse Head*/
   height: 45%;
   font-size: 2rem;
 }
 
-.card:hover > .card-head h3, .static-card > .card-head h3{
+.card:hover > .card-head h3,.card:active > .card-head h3,.card:focus > .card-head h3, .static-card > .card-head h3{
   white-space: normal;
   font-size: 1.5rem;
 }
 
-.card:hover > .card-body,.static-card  > .card-body{ /*Expand Description*/
+.card:hover > .card-body,.card:active > .card-body,.card:focus > .card-body,.static-card  > .card-body{ /*Expand Description*/
   visibility: visible;
   height: 55%;
   padding:0.5em 0;

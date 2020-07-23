@@ -3,102 +3,119 @@
     font-size:20px;
   }
   /* Display Down Page */
-  .nav,.nav-items,.nav-buttons,.content,.info-cards,.footer-content, .listing-profile-content, .contact-details, .about-section{
+  .nav,.nav-items,.nav-buttons,.additional-options,.content,.info-cards,.footer-content, .listing-profile-content, .contact-details, .about-section{
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
   }
 
   /* Center Content */
-  .nav, .nav-items, .nav-buttons,.title,.content,.footer-content,.footer-section,.about-section{
+  .nav, .nav-items, .nav-buttons,.title,.content,.additional-options,.footer-content,.footer-section,.about-section{
     -ms-align-items: center;
     align-items: center;
     text-align: center;
   }
-/* _________________________________________________________________________ */
-/* Navigation */
-  .nav{
-    padding:0;
-    padding-bottom:1em;
-    position: relative;
-    height: auto;
-    font-size: 1.5em;
-  }
-
-  #logo-link{
-    width: 70%;
-    margin-bottom: 1em;
-  }
-/* _________________________________________________________________________ */
-/* Title Section */
-  .title{
-    padding-top: 4rem;
-    background-attachment: fixed;
-  }
-
-  .search-form{
-    width: 90%;
-  }
-/* _________________________________________________________________________ */
-/* Content Section */
-  .featured-slideshow{
-    width: 100%;
-    height: 23rem;
-  }
-
-  .house-info{
-    width: 20%;
-  }
-
-  .card{
-    margin-top:1em;
-    width: 90%;
-    height: 40rem;
-    font-size:1.5em;
-  }
-
-  .card:hover{
-    transform: none;
-  }
   /* _________________________________________________________________________ */
-  /* Footer Section */
-  .footer{
-    height: auto;
+  /* Navigation */
+    .nav{
+      padding:0;
+      padding-bottom:1em;
+      position: relative;
+      height: auto;
+      font-size: 1.5em;
+    }
+
+    #logo-link{
+      width: 70%;
+      margin-bottom: 1em;
+    }
+  /* _________________________________________________________________________ */
+  /* Title Section */
+    .title{
+      padding-top: 4rem;
+      background-attachment: local;
+    }
+
+    .search-form{
+      width: 90%;
+    }
+
+    .option-toggle{
+      margin-top:0.5em;
+    }
+    .additional-option{
+      margin-top:1em;
+    }
+  /* _________________________________________________________________________ */
+  /* Content Section */
+    .featured-slideshow{
+      width: 100%;
+      height: 23rem;
+    }
+
+    .house-info{
+      width: 20%;
+    }
+
+    .card{
+      margin-top:1em;
+      width: 90%;
+      height: 40rem;
+      font-size:1.5em;
+    }
+
+    .card:hover{
+      transform: none;
+    }
+    /* _________________________________________________________________________ */
+    /* Footer Section */
+    .footer{
+      height: auto;
+    }
+
+    .footer a{
+      width: 20%;
+    }
+
+    .footer-section{
+      width: 90%;
+      min-height: 20rem;
+      margin-top:2em;
+    }
+  /* _________________________________________________________________________ */
+  /* Listing and Agent Profiles */
+    .sidebar{
+      width: 90%;
+      margin-bottom:1em;
+    }
+
+    .listing-profile-content{
+      width: 90%;
+    }
+
+    .listing-profile-content > *{
+      width: 100%;
+    }
+
+    .contact-info{
+      width: 90%;
+      margin-top:1em;
+      border-left: none;
+      border-top: 0.2em solid #1A1B1A;
+    }
+  /* _________________________________________________________________________ */
+  /* About Us Page */
+    .about-info img{
+      width: 70%;
+  }
+}
+
+@media only screen and (max-width: 605px){
+  :root{
+    font-size:10px;
   }
 
-  .footer a{
-    width: 20%;
-  }
-
-  .footer-section{
-    width: 90%;
-    min-height: 20rem;
-    margin-top:2em;
-  }
-/* _________________________________________________________________________ */
-/* Listing and Agent Profiles */
-  .sidebar{
-    width: 90%;
-    margin-bottom:1em;
-  }
-
-  .listing-profile-content{
-    width: 90%;
-  }
-
-  .listing-profile-content > *{
-    width: 100%;
-  }
-
-  .contact-info{
-    width: 90%;
-    margin-top:1em;
-    border-left: none;
-    border-top: 0.2em solid #1A1B1A;
-  }
-/* _________________________________________________________________________ */
-/* About Us Page */
-  .about-info img{
-    width: 70%;
+  .featured-slideshow{
+    height: 24rem;
   }
 }
