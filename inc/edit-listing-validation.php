@@ -18,79 +18,80 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(isset($_POST['listing-update'])){ //Listing Update
     //While loop does not iterate. Is used so that I can use break to exit statement if error occurs
-    while(true) {
-      //Property Related Fields
-      $address = secure($_POST['listing-address']);
-      $suburb = formalize_string($_POST['listing-suburb']);
-      $bedrooms = secure($_POST['listing-bedrooms']);
-      $bathrooms = secure($_POST['listing-bathrooms']);
-      $toilets = secure($_POST['listing-toilets']);
-      $garage_spaces = secure($_POST['listing-garage-spaces']);
-      $size = secure($_POST['listing-size']);
-      $year = secure($_POST['listing-year']);
-      $construction = formalize_string($_POST['listing-construction']);
-      $condition = formalize_string($_POST['listing-condition']);
-      $insulation = formalize_string($_POST['listing-insulation']);
-      $image = $_FILES['listing-image'];
-      $listing_state = secure($_POST['listing-sold']);
-      $PID = secure($_POST['PID']);
-      if (empty($insulation)){ //Check if insulation blank
-        $insulation = "None";
-      }
+    do{
 
-      //Property Update Query
-      $update_query = "UPDATE tbl_properties
-                       SET
-                          Address = '{$address}',
-                          Suburb = '{$suburb}',
-                          Bedrooms = {$bedrooms},
-                          Bathrooms = {$bathrooms},
-                          Toilets = {$toilets},
-                          GarageSpaces = {$garage_spaces},
-                          Size = {$size},
-                          Year = {$year},
-                          Construction = '{$construction}',
-                          PCondition = '{$condition}',
-                          Insulation = '{$insulation}'
-                       WHERE PID = {$PID};";
-      //Listing Fields
-      $title = formalize_string($_POST['listing-title']);
-      $description = secure($_POST['listing-description']);
-      $price = secure($_POST['listing-price']);
-      $agent = secure($_POST['listing-agent']);
-      $auction_date = secure($_POST['listing-auction-date']);
-      $LID = secure($_POST['LID']);
-
-      //Listing Update Query
-      $update_query .= "UPDATE tbl_listings
-                        SET
-                          Title = '{$title}',
-                          Description = '{$description}',
-                          Price = {$price},
-                          Agent = {$agent},
-                          AuctionDate = '{$auction_date}',
-                          Sold = {$listing_state}
-                        WHERE LID = {$LID};";
-
-      //Upload new image if it exists, else skip image
-      if($image['error'] != 4){ //Error 4 is nothing submitted so if not nothing, or if file is submitted
-
-        $target_location = "./media/properties/{$PID}.png";
-        $image_valid = check_image($image,$target_location,"2:1"); //Check image is valid
-
-        //Attempt to upload image if valid
-        if (!$image_valid || !move_uploaded_file($image["tmp_name"], $target_location)) { //If image cannot be uploaded or is uploaded unsuccessfully
-          break; //Error
+        //Property Related Fields
+        $address = secure($_POST['listing-address']);
+        $suburb = formalize_string($_POST['listing-suburb']);
+        $bedrooms = secure($_POST['listing-bedrooms']);
+        $bathrooms = secure($_POST['listing-bathrooms']);
+        $toilets = secure($_POST['listing-toilets']);
+        $garage_spaces = secure($_POST['listing-garage-spaces']);
+        $size = secure($_POST['listing-size']);
+        $year = secure($_POST['listing-year']);
+        $construction = formalize_string($_POST['listing-construction']);
+        $condition = formalize_string($_POST['listing-condition']);
+        $insulation = formalize_string($_POST['listing-insulation']);
+        $image = $_FILES['listing-image'];
+        $listing_state = secure($_POST['listing-sold']);
+        $PID = secure($_POST['PID']);
+        if (empty($insulation)){ //Check if insulation blank
+          $insulation = "None";
         }
-      }
-      //Update database
-      if($conn -> multi_query($update_query)){ //Execute table updates
-        header("Location: ./listing-profile.php?LID={$LID}"); //Redirect
-      }
 
-      //Prevent iteration
-      break; //Error - query failed or loop did not exit via redirect
-    }
+        //Property Update Query
+        $update_query = "UPDATE tbl_properties
+                         SET
+                            Address = '{$address}',
+                            Suburb = '{$suburb}',
+                            Bedrooms = {$bedrooms},
+                            Bathrooms = {$bathrooms},
+                            Toilets = {$toilets},
+                            GarageSpaces = {$garage_spaces},
+                            Size = {$size},
+                            Year = {$year},
+                            Construction = '{$construction}',
+                            PCondition = '{$condition}',
+                            Insulation = '{$insulation}'
+                         WHERE PID = {$PID};";
+        //Listing Fields
+        $title = formalize_string($_POST['listing-title']);
+        $description = secure($_POST['listing-description']);
+        $price = secure($_POST['listing-price']);
+        $agent = secure($_POST['listing-agent']);
+        $auction_date = secure($_POST['listing-auction-date']);
+        $LID = secure($_POST['LID']);
+
+        //Listing Update Query
+        $update_query .= "UPDATE tbl_listings
+                          SET
+                            Title = '{$title}',
+                            Description = '{$description}',
+                            Price = {$price},
+                            Agent = {$agent},
+                            AuctionDate = '{$auction_date}',
+                            Sold = {$listing_state}
+                          WHERE LID = {$LID};";
+
+        //Upload new image if it exists, else skip image
+        if($image['error'] != 4){ //Error 4 is nothing submitted so if not nothing, or if file is submitted
+
+          $target_location = "./media/properties/{$PID}.jpg";
+          $image_valid = check_image($image,$target_location,"2:1"); //Check image is valid
+
+          //Attempt to upload image if valid
+          if (!$image_valid || !move_uploaded_file($image["tmp_name"], $target_location)) { //If image cannot be uploaded or is uploaded unsuccessfully
+            break; //Error
+          }
+        }
+        //Update database
+        if($conn -> multi_query($update_query)){ //Execute table updates
+          header("Location: ./listing-profile.php?LID={$LID}"); //Redirect
+        }
+
+        //Prevent iteration
+        break; //Error - query failed or loop did not exit via redirect
+    } while (0);
 
     //Display Error if loop broken
     echo "<br>";

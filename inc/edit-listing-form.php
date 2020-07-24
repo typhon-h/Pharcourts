@@ -16,10 +16,10 @@
   </div>
 
   <div class="row">
-    <input class="form-field" type="number" name="listing-price" placeholder="Price" required <?php echo ((isset($listing))? "value=\"{$listing['Price']}\"":'disabled'); ?>>
+    <input class="form-field" type="number" name="listing-price" placeholder="Price" required title="Price" pattern="^[1-9]\d*$" <?php echo ((isset($listing))? "value=\"{$listing['Price']}\"":'disabled'); ?>>
 
       <!-- Regex - must be numbers YYY-MM-DD format -->
-      <input class="form-field" type="text" name="listing-auction-date" placeholder="Auction Date: YYYY-MM-DD" title="Auction Date YYYY-MM-DD" pattern="^\d{4}-\d{1,2}-\d{1,2}$" required <?php echo ((isset($listing))? "value=\"{$listing['AuctionDate']}\"":'disabled'); ?>>
+      <input class="form-field" type="text" name="listing-auction-date" placeholder="Auction Date: YYYY-MM-DD" title="Auction Date YYYY-MM-DD" pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1[0-2])$" required <?php echo ((isset($listing))? "value=\"{$listing['AuctionDate']}\"":'disabled'); ?>>
   </div>
 
   <div class="row">

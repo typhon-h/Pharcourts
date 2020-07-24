@@ -64,6 +64,7 @@
 
       case 'listing-profile': //Listing Suburb
         echo "<h2>{$listing['Suburb']}</h2>";
+        echo "<h2>$".number_format($listing['Price'])."</h2>";
         break;
     }
    ?>

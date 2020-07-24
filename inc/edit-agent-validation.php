@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(isset($_POST['agent-update'])){ //Agent Update
     //While loop does not iterate. Is used so that I can use break to exit statement if error occurs
-    while(true) {
+    do{
       //Get Fields
       $fname = formalize_string($_POST['agent-fname']);
       $sname = formalize_string($_POST['agent-sname']);
@@ -57,8 +57,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
       //Prevent iteration
       break; //Error - query failed or loop did not exit via redirect
-
-    }
+    } while(0);
 
     //Display Error if loop broken
     echo "<br>";
@@ -76,7 +75,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                      WHERE tbl_listings.Agent = {$AID};
                      DELETE FROM tbl_agents
                      WHERE AID = {$AID};";
-    $image_location = "./media/agents/{$AID}.png";
+    $image_location = "./media/agents/{$AID}.jpg";
 
     //Delete Image. Delete All Associated listings and then Agent
     if (unlink($image_location) && $conn -> multi_query($delete_query)){ //Image and database information is removed

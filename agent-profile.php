@@ -6,6 +6,9 @@
      if(isset($_GET['AID'])){ //Only load page if agent ID is given
        $ID = $_GET['AID']; //Get Listing ID
        $agent = get_from_table("tbl_agents","tbl_agents.AID = {$ID}")[0];
+       if ($agent == ''){ //Invalid ID
+         header("Location: ./agents.php");
+       }
      }
      else{ //Redirect to agents page if agent not given
        header("Location: ./agents.php");

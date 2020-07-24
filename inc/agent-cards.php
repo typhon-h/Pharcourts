@@ -1,4 +1,4 @@
-<div class="info-cards row">
+<div class="agents-items row">
   <?php
     //Get all agents
     $all_agents = get_from_table('tbl_agents');

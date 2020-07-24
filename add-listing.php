@@ -20,7 +20,7 @@
     <div class="content row">
       <!-- Sidebar for Existing Unassigned Property -->
       <?php include "./inc/add-listing-sidebar.php" ?>
-      <div class="column">
+      <div class="column form-container">
         <!-- Form Validation -->
         <span class="error">
           <?php include "./inc/add-listing-validation.php"; ?>

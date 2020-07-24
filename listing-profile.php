@@ -6,7 +6,9 @@
      if(isset($_GET['LID'])){ //Only load page if a listing ID is given
        $ID = $_GET['LID']; //Get Listing ID
        $listing = get_from_table("tbl_listings","tbl_listings.LID = {$ID}")[0];
-
+        if ($listing == '') { //Invalid ID
+          header("Location: ./listings.php");
+        }
        //PHP Level INNER JOIN
        //Same as Inner Join ON tbl_listings.Property = tbl_properties.PID
        $property = get_from_table("tbl_properties","tbl_properties.PID = {$listing['Property']}")[0];

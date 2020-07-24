@@ -374,10 +374,18 @@ input[type=submit]:hover{
   margin-bottom: 3rem;
 }
 
-.listings-items{
+.listings-items,.agents-items{
   width: 100%;
   height: auto;
   flex-wrap: wrap;
+}
+
+.listings-items{
+  justify-content: flex-start;
+}
+
+.agents-items{
+  justify-content: center;
 }
 
 .sidebar{
@@ -964,6 +972,11 @@ font-family: Verdana, sans-serif;
 
 /* _________________________________________________________________________ */
 /* Standard Form */
+.form-container{
+  max-width: 60%;
+
+}
+
 .form{
   min-width: 50%;
   height: auto;
@@ -1049,15 +1062,15 @@ select.form-field{
   color:#F00;
 }
 /* _________________________________________________________________________ */
-/* Edit Select Form */
-select[name*="edit"]{
+/* Sidebar Select Form */
+.sidebar select{
   padding: 0.5em 0.5em;
   height:15rem;
   overflow-x: hidden;
   overflow-y:auto;
 }
 
-select[name*="edit"] option{
+.sidebar select option{
   margin: 0.25em 0;
 }
 /* _________________________________________________________________________ */

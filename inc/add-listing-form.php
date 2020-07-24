@@ -1,4 +1,12 @@
-
+<?php
+  //Prevent assocoated property populating if page navigated back to and form resubmitted
+if(isset($property)){
+  $existing_property = get_from_table('tbl_listings',"tbl_listings.Property = {$property['PID']}"); //Get associated listing (if any)
+  if($existing_property != ''){ //Set property to null if query returns value
+    $property = NULL;
+  }
+}
+ ?>
 <form class="form column" method="post" enctype="multipart/form-data">
   <!-- Listing Fields -->
   <div class="row">
@@ -10,9 +18,11 @@
   </div>
 
   <div class="row">
-    <input class="form-field" type="number" name="listing-price" placeholder="Price" required>
+    <!-- Regex integer greater than 0 -->
+    <input class="form-field" type="number" name="listing-price" placeholder="Price" title="Price" pattern="^[1-9]\d*$" required>
 
-      <input class="form-field" type="text" name="listing-auction-date" placeholder="Auction Date: YYYY-MM-DD" title="Auction Date YYYY-MM-DD" pattern="^\d{4}-\d{1,2}-\d{1,2}$" required>
+      <!-- Regex format YYYY-MM-DD -->
+      <input class="form-field" type="text" name="listing-auction-date" placeholder="Auction Date: YYYY-MM-DD" title="Auction Date YYYY-MM-DD" pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1[0-2])$" required>
   </div>
 
   <div class="row">

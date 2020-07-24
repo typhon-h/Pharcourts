@@ -81,7 +81,7 @@ function check_image($image, string $target_location, string $aspect_ratio=""){
 
   //Check if not jpg
   if($file_type != "jpg"){
-    echo "File must be jpeg format";
+    echo "File must be .jpg format";
     return false; //Invalid
   }
 

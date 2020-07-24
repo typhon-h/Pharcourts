@@ -1,7 +1,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   //While loop does not iterate. Is used so that I can use break to exit statement if error occurs
-  while(true) {
+  do{
     //Property Fields
     $fname = formalize_string($_POST['agent-fname']);
     $sname = formalize_string($_POST['agent-sname']);
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $remove_query = "DELETE FROM tbl_agents
                       WHERE tbl_agents.AID = {$AID};";
 
-    $target_location = "./media/agents/{$AID}.png";
+    $target_location = "./media/agents/{$AID}.jpg";
     $image_valid = check_image($image,$target_location,"1:1"); //Check image is valid
 
     //Attempt to upload image if valid
@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $conn -> query($remove_query);
       break; //Error
     }
-  }
+  } while (0);
 
 //Display Error if loop broken
 echo "<br>";

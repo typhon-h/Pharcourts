@@ -26,6 +26,7 @@
 
             case 'AuctionDate':
               $field = 'Auction Date';
+              $value = format_date($value);
               break;
           }
 
