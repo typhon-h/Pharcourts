@@ -22,7 +22,7 @@ if(isset($property)){
     <input class="form-field" type="number" name="listing-price" placeholder="Price" title="Price" pattern="^[1-9]\d*$" required>
 
       <!-- Regex format YYYY-MM-DD -->
-      <input class="form-field" type="text" name="listing-auction-date" placeholder="Auction Date: YYYY-MM-DD" title="Auction Date YYYY-MM-DD" pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1[0-2])$" required>
+      <input class="form-field" type="text" name="listing-auction-date" placeholder="Auction Date: YYYY-MM-DD" title="Auction Date YYYY-MM-DD" pattern="^\d{4}-(0[1-9]|1[0-2])-([0-3][0-9])$" required>
   </div>
 
   <div class="row">
