@@ -2,7 +2,7 @@
   <h3>Select Listing:</h3>
   <form class="form" method="post">
     <!-- Form size 2 makes it expand to fit options -->
-    <select class="form-field" name="edit-listing" size="2" required>
+    <select class="form-field load-select" name="edit-listing" size="10" required>
       <?php
         // Populate Select with Addresses of all properties assigned to listings
         $query = "SELECT *

@@ -1063,14 +1063,14 @@ select.form-field{
 }
 /* _________________________________________________________________________ */
 /* Sidebar Select Form */
-.sidebar select{
+.load-select{
   padding: 0.5em 0.5em;
   height:15rem;
   overflow-x: hidden;
   overflow-y:auto;
 }
 
-.sidebar select option{
+.load-select option{
   margin: 0.25em 0;
 }
 /* _________________________________________________________________________ */

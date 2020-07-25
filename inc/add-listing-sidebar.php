@@ -13,7 +13,7 @@ $associated_properties = rtrim($associated_properties,',') //Remove tailing comm
 <div class="sidebar">
   <h3>Select Existing Property:</h3>
   <form class="form" method="post">
-    <select class="form-field" name="add-property" size="10" required>
+    <select class="form-field load-select" name="add-property" size="10" required>
       <?php
         //Get all unlinked properties
         $query = "SELECT *
