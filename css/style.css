@@ -970,6 +970,10 @@ font-family: Verdana, sans-serif;
   border-bottom: 0.2em solid #FFF;
 }
 
+.additional-selects option{
+  color:#000;
+}
+
 /* _________________________________________________________________________ */
 /* Standard Form */
 .form-container{
