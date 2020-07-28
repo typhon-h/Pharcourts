@@ -1,7 +1,7 @@
 <?php
 //Establish connection to database
   $dbhost = 'localhost';
-  $dbname = 'pharcourts';
+  $dbname = 'AS91892 Harrison Tyson';
   $dbuser = 'root';
   $dbpass = '';
 
