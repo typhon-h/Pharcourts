@@ -6,7 +6,12 @@
     $username = secure($_POST['login-user']);
     $password = secure($_POST['login-pass']);
 
-    $user = get_from_table('tbl_users',"tbl_users.Username = '{$username}'")[0];
+    $user = get_from_table('tbl_users',"tbl_users.Username = '{$username}'");
+
+    if ($user){ //Get user information if query not false
+      $user = $user[0];
+    }
+
     if($user != false && password_verify($password,$user['Password']) ){
       //If Valid Credentials
       $_SESSION['User'] = $user['Username']; //Define Session User
